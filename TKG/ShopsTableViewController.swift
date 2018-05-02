@@ -60,6 +60,20 @@ class ShopsTableViewController: UITableViewController {
 
         return cell
     }
+  
+  // セグエで移動する前にデータを受け渡す
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // セグエがshowShopのときに処理
+    if segue.identifier == "showShop" {
+      // タップした行番号を取り出す
+      if let indexPath = self.tableView.indexPathForSelectedRow {
+        // 行のデータを取り出す
+        let shopData = shopDataArray[(indexPath).row]
+        // 移動先のビューコントローラのdataプロパティに値を設定する
+        (segue.destination as! ShopViewController).shopData = shopData
+      }
+    }
+  }
 
     /*
     // Override to support conditional editing of the table view.

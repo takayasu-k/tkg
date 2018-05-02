@@ -49,7 +49,7 @@
             </objects>
             <point key="canvasLocation" x="-425" y="23"/>
         </scene>
-        <!--Shops Table View Controller-->
+        <!--東京-->
         <scene sceneID="7SR-27-dZL">
             <objects>
                 <tableViewController id="cDH-GW-gHl" customClass="ShopsTableViewController" customModule="TKG" customModuleProvider="target" sceneMemberID="viewController">
@@ -110,6 +110,7 @@
                                     <outlet property="shopAddressLabel" destination="avE-eR-rTM" id="rgc-e2-rcI"/>
                                     <outlet property="shopImageView" destination="pji-L9-dtt" id="BSU-6T-pbf"/>
                                     <outlet property="shopNameLabel" destination="btt-eY-AUo" id="Nxl-vG-aTo"/>
+                                    <segue destination="Bd8-PN-X10" kind="show" identifier="showShop" id="ygh-QU-AQe"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -118,11 +119,44 @@
                             <outlet property="delegate" destination="cDH-GW-gHl" id="Zar-ig-ETh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="G0f-BD-xUg"/>
+                    <navigationItem key="navigationItem" title="東京" id="G0f-BD-xUg"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wo6-g5-y9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1684" y="281"/>
+        </scene>
+        <!--店舗名-->
+        <scene sceneID="cbw-g6-38O">
+            <objects>
+                <viewController id="Bd8-PN-X10" customClass="ShopViewController" customModule="TKG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DDz-jO-fnR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="34G-Yo-9wb">
+                                <rect key="frame" x="0.0" y="64" width="320" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="c0a-CZ-wWX"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="34G-Yo-9wb" firstAttribute="leading" secondItem="zLN-Tb-Zt6" secondAttribute="leading" id="7Tc-wt-rlx"/>
+                            <constraint firstItem="34G-Yo-9wb" firstAttribute="trailing" secondItem="zLN-Tb-Zt6" secondAttribute="trailing" id="Kic-9e-LvX"/>
+                            <constraint firstItem="34G-Yo-9wb" firstAttribute="top" secondItem="zLN-Tb-Zt6" secondAttribute="top" id="ehF-Kk-XEQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zLN-Tb-Zt6"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="店舗名" id="bZF-gU-aIR"/>
+                    <connections>
+                        <outlet property="shopImageView" destination="34G-Yo-9wb" id="0Za-CV-DlO"/>
+                        <outlet property="shopNameTitle" destination="bZF-gU-aIR" id="Ia9-Dj-Y6f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CGx-Q3-Jfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2568.75" y="283.0985915492958"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iZR-xr-BFF">
@@ -213,7 +247,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="443"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="U8I-b2-G2H">
+                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="U8I-b2-G2H">
                             <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -267,6 +301,9 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.99607843139999996" green="0.78039215689999997" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
