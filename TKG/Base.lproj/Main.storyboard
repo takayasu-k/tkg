@@ -49,6 +49,80 @@
             </objects>
             <point key="canvasLocation" x="-425" y="23"/>
         </scene>
+        <!--Shops Table View Controller-->
+        <scene sceneID="7SR-27-dZL">
+            <objects>
+                <tableViewController id="cDH-GW-gHl" customClass="ShopsTableViewController" customModule="TKG" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jfT-nY-CQ3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="ShM-4X-zKJ">
+                            <rect key="frame" x="0.0" y="148" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShopCell" rowHeight="120" id="bt2-eU-5TB" customClass="ShopsTableViewCell" customModule="TKG" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bt2-eU-5TB" id="IBI-0J-ZJq">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pji-L9-dtt">
+                                            <rect key="frame" x="10" y="10" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="LqE-zf-rUA"/>
+                                                <constraint firstAttribute="height" constant="100" id="dhJ-3M-au4"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btt-eY-AUo">
+                                            <rect key="frame" x="120" y="10" width="190" height="78.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avE-eR-rTM">
+                                            <rect key="frame" x="120" y="88.5" width="190" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="pgH-IO-qGs"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="btt-eY-AUo" firstAttribute="top" secondItem="IBI-0J-ZJq" secondAttribute="top" constant="10" id="63X-6l-7PX"/>
+                                        <constraint firstItem="avE-eR-rTM" firstAttribute="leading" secondItem="pji-L9-dtt" secondAttribute="trailing" constant="10" id="AHR-2g-LEz"/>
+                                        <constraint firstAttribute="trailing" secondItem="btt-eY-AUo" secondAttribute="trailing" constant="10" id="F4b-HQ-gJh"/>
+                                        <constraint firstItem="pji-L9-dtt" firstAttribute="top" secondItem="IBI-0J-ZJq" secondAttribute="top" constant="10" id="Jj0-2x-lMA"/>
+                                        <constraint firstItem="pji-L9-dtt" firstAttribute="leading" secondItem="IBI-0J-ZJq" secondAttribute="leading" constant="10" id="SKU-Rk-bHd"/>
+                                        <constraint firstAttribute="bottom" secondItem="pji-L9-dtt" secondAttribute="bottom" constant="10" id="ZFy-H5-x3j"/>
+                                        <constraint firstAttribute="bottom" secondItem="avE-eR-rTM" secondAttribute="bottom" constant="10" id="hyh-TY-Q4C"/>
+                                        <constraint firstAttribute="trailing" secondItem="avE-eR-rTM" secondAttribute="trailing" constant="10" id="pnx-65-pPb"/>
+                                        <constraint firstItem="btt-eY-AUo" firstAttribute="leading" secondItem="pji-L9-dtt" secondAttribute="trailing" constant="10" id="q63-IR-Lnl"/>
+                                        <constraint firstItem="avE-eR-rTM" firstAttribute="top" secondItem="btt-eY-AUo" secondAttribute="bottom" id="z3P-5w-e6r"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="shopAddressLabel" destination="avE-eR-rTM" id="rgc-e2-rcI"/>
+                                    <outlet property="shopImageView" destination="pji-L9-dtt" id="BSU-6T-pbf"/>
+                                    <outlet property="shopNameLabel" destination="btt-eY-AUo" id="Nxl-vG-aTo"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cDH-GW-gHl" id="uo8-b6-qX7"/>
+                            <outlet property="delegate" destination="cDH-GW-gHl" id="Zar-ig-ETh"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wo6-g5-y9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="830.625" y="280.98591549295776"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iZR-xr-BFF">
             <objects>
