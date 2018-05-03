@@ -204,6 +204,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftI-gi-bDh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <color key="backgroundColor" red="0.99607843137254903" green="0.7803921568627451" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.99607843139999996" green="0.78039215689999997" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <searchBar contentMode="redraw" placeholder="店舗名から探す" translatesAutoresizingMaskIntoConstraints="NO" id="XtN-oQ-Tba">
                                 <rect key="frame" x="0.0" y="64" width="320" height="56"/>

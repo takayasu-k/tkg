@@ -47,6 +47,7 @@ class SearchTopViewController: UIViewController, UITableViewDelegate, UITableVie
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    // 表示する行の数を返す
     return prefectures.count
   }
   
@@ -57,11 +58,6 @@ class SearchTopViewController: UIViewController, UITableViewDelegate, UITableVie
     cell.shopCount.text = "(\(prefData.shopCount))"
     
     return cell
-  }
-  
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let prefData = prefectures[indexPath.row]
-    performSegue(withIdentifier: "showPrefShops", sender: prefData)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
