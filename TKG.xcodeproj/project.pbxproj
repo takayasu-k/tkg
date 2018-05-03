@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B242D642097201100D87AC7 /* SearchTopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B242D632097201100D87AC7 /* SearchTopTableViewController.swift */; };
 		3B242D6620972D1B00D87AC7 /* SearchTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B242D6520972D1B00D87AC7 /* SearchTopViewController.swift */; };
 		3B242D6A2097312B00D87AC7 /* PrefTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B242D692097312B00D87AC7 /* PrefTableViewCell.swift */; };
 		3B242D6E2099C75E00D87AC7 /* ShopsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B242D6D2099C75E00D87AC7 /* ShopsTableViewCell.swift */; };
@@ -22,7 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3B242D632097201100D87AC7 /* SearchTopTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTopTableViewController.swift; sourceTree = "<group>"; };
 		3B242D6520972D1B00D87AC7 /* SearchTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTopViewController.swift; sourceTree = "<group>"; };
 		3B242D692097312B00D87AC7 /* PrefTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefTableViewCell.swift; sourceTree = "<group>"; };
 		3B242D6D2099C75E00D87AC7 /* ShopsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsTableViewCell.swift; sourceTree = "<group>"; };
@@ -77,7 +75,6 @@
 				3B242D6D2099C75E00D87AC7 /* ShopsTableViewCell.swift */,
 				3B242D692097312B00D87AC7 /* PrefTableViewCell.swift */,
 				3B242D6520972D1B00D87AC7 /* SearchTopViewController.swift */,
-				3B242D632097201100D87AC7 /* SearchTopTableViewController.swift */,
 				3BB74E2E208B02770095B3A5 /* Assets.xcassets */,
 				3BB74E30208B02770095B3A5 /* LaunchScreen.storyboard */,
 				3BB74E33208B02770095B3A5 /* Info.plist */,
@@ -157,7 +154,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B242D6620972D1B00D87AC7 /* SearchTopViewController.swift in Sources */,
-				3B242D642097201100D87AC7 /* SearchTopTableViewController.swift in Sources */,
 				3B242D702099C7C800D87AC7 /* ShopsTableViewController.swift in Sources */,
 				3BB74E2A208B02760095B3A5 /* ViewController.swift in Sources */,
 				3B242D722099EEA300D87AC7 /* ShopViewController.swift in Sources */,
