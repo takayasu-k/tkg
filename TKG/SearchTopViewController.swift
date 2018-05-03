@@ -24,6 +24,8 @@ class SearchTopViewController: UIViewController, UITableViewDelegate, UITableVie
 
   @IBOutlet weak var prefTableView: UITableView!
   
+  @IBOutlet weak var searchBar: UISearchBar!
+  
   override func viewDidLoad() {
         super.viewDidLoad()
 

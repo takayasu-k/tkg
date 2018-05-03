@@ -110,7 +110,7 @@
                                     <outlet property="shopAddressLabel" destination="avE-eR-rTM" id="rgc-e2-rcI"/>
                                     <outlet property="shopImageView" destination="pji-L9-dtt" id="BSU-6T-pbf"/>
                                     <outlet property="shopNameLabel" destination="btt-eY-AUo" id="Nxl-vG-aTo"/>
-                                    <segue destination="Bd8-PN-X10" kind="show" identifier="showShop" id="ygh-QU-AQe"/>
+                                    <segue destination="Bd8-PN-X10" kind="show" identifier="showShop" id="FGl-oU-NrD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -270,6 +270,7 @@
                     <navigationItem key="navigationItem" id="bms-U8-gWJ"/>
                     <connections>
                         <outlet property="prefTableView" destination="PdB-Mp-brc" id="sp8-w5-39x"/>
+                        <outlet property="searchBar" destination="XtN-oQ-Tba" id="2Wj-wW-QBu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q1U-Gk-ZG8" userLabel="First Responder" sceneMemberID="firstResponder"/>
