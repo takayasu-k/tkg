@@ -6,6 +6,8 @@
 //  Copyright © 2018年 tkg. All rights reserved.
 //
 
+
+// Moreタブ用ビューコントローラ（暫定）
 import UIKit
 
 class ViewController: UIViewController {
