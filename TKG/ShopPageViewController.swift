@@ -47,9 +47,6 @@ extension ShopPageViewController : UIPageViewControllerDataSource {
     if viewController.isKind(of: ShopMenusViewController.self) {
       // ShopMenus -> ShopInfoTable
       return getShopInfo()
-    } else if viewController.isKind(of: ShopInfoTableViewController.self) {
-      // ShopInfoTable -> ShopMenus
-      return getShopMenus()
     } else {
       //  -> end of the road
       return nil
@@ -60,9 +57,6 @@ extension ShopPageViewController : UIPageViewControllerDataSource {
     if viewController.isKind(of: ShopInfoTableViewController.self) {
       // ShopInfoTable -> ShopMenus
       return getShopMenus()
-    } else if viewController.isKind(of: ShopMenusViewController.self) {
-      // ShopMenus -> ShopInfoTable
-      return getShopInfo()
     } else {
       //  -> end of the road
       return nil

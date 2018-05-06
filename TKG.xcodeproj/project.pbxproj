@@ -22,6 +22,7 @@
 		3BB9DF11209EED9F0067EC0A /* ShopPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB9DF10209EED9F0067EC0A /* ShopPageViewController.swift */; };
 		3BB9DF13209EEFA10067EC0A /* ShopMenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB9DF12209EEFA10067EC0A /* ShopMenusViewController.swift */; };
 		3BB9DF15209EFE160067EC0A /* ShopInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB9DF14209EFE160067EC0A /* ShopInfoTableViewCell.swift */; };
+		3BB9DF17209F3A530067EC0A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB9DF16209F3A530067EC0A /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		3BB9DF10209EED9F0067EC0A /* ShopPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopPageViewController.swift; sourceTree = "<group>"; };
 		3BB9DF12209EEFA10067EC0A /* ShopMenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopMenusViewController.swift; sourceTree = "<group>"; };
 		3BB9DF14209EFE160067EC0A /* ShopInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopInfoTableViewCell.swift; sourceTree = "<group>"; };
+		3BB9DF16209F3A530067EC0A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				3BB74E27208B02760095B3A5 /* AppDelegate.swift */,
 				3BB74E29208B02760095B3A5 /* ViewController.swift */,
 				3BB74E2B208B02760095B3A5 /* Main.storyboard */,
+				3BB9DF16209F3A530067EC0A /* TabBarController.swift */,
 				3BB9DF14209EFE160067EC0A /* ShopInfoTableViewCell.swift */,
 				3BB9DF12209EEFA10067EC0A /* ShopMenusViewController.swift */,
 				3BB9DF10209EED9F0067EC0A /* ShopPageViewController.swift */,
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BB9DF0F209EE8450067EC0A /* ShopInfoTableViewController.swift in Sources */,
+				3BB9DF17209F3A530067EC0A /* TabBarController.swift in Sources */,
 				3B242D6620972D1B00D87AC7 /* SearchTopViewController.swift in Sources */,
 				3B242D702099C7C800D87AC7 /* ShopsTableViewController.swift in Sources */,
 				3BB74E2A208B02760095B3A5 /* ViewController.swift in Sources */,

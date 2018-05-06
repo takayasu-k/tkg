@@ -14,9 +14,9 @@ class ShopInfoTableViewController: UITableViewController {
   let shopInfo:[(key:String,value:String)] = [
     ("住所","東京都港区赤坂4-2-32"),
     ("電話","050-5868-2327"),
-    ("営業時間","＜昼の部＞\n月～土　11：00～14：30（ラストオーダー　14：00）\n＜夜の部＞\n月～木　17：00～23：30（ラストオーダー　22：45）\n金　　　17：00～25：00（ラストオーダー　24：00）\n土・祝　17：00～23：00（ラストオーダー　22：00）"),
+    ("営業時間","[昼]\n月～土　11:00～14:30(ラストオーダー 14:00)\n[夜]\n月～木 17:00-23:30(ラストオーダー 22:45)\n金 17:00-25:00(ラストオーダー 24:00)\n土・祝 17:00-23:00(ラストオーダー 22:00)"),
     ("定休日","日曜、祝日の月曜、年末年始"),
-    ("支払い方法","カード可\n（VISA、MASTER、JCB、AMEX、Diners）\n電子マネー不可")
+    ("支払い方法","カード可\n(VISA、MASTER、JCB、AMEX、Diners)\n電子マネー不可")
   ]
 
     override func viewDidLoad() {
@@ -27,6 +27,7 @@ class ShopInfoTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.tableView.isScrollEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
