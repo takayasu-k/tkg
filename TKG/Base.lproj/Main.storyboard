@@ -106,7 +106,7 @@
                                         <constraint firstItem="avE-eR-rTM" firstAttribute="top" secondItem="btt-eY-AUo" secondAttribute="bottom" id="z3P-5w-e6r"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                <inset key="separatorInset" minX="10" minY="0.0" maxX="15" maxY="0.0"/>
                                 <connections>
                                     <outlet property="shopAddressLabel" destination="avE-eR-rTM" id="rgc-e2-rcI"/>
                                     <outlet property="shopImageView" destination="pji-L9-dtt" id="BSU-6T-pbf"/>
