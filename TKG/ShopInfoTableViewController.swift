@@ -10,6 +10,14 @@ import UIKit
 
 // 店舗の基本情報表示用テーブルビューコントローラ
 class ShopInfoTableViewController: UITableViewController {
+  
+  let shopInfo:[(key:String,value:String)] = [
+    ("住所","東京都港区赤坂4-2-32"),
+    ("電話","050-5868-2327"),
+    ("営業時間","＜昼の部＞\n月～土　11：00～14：30（ラストオーダー　14：00）\n＜夜の部＞\n月～木　17：00～23：30（ラストオーダー　22：45）\n金　　　17：00～25：00（ラストオーダー　24：00）\n土・祝　17：00～23：00（ラストオーダー　22：00）"),
+    ("定休日","日曜、祝日の月曜、年末年始"),
+    ("支払い方法","カード可\n（VISA、MASTER、JCB、AMEX、Diners）\n電子マネー不可")
+  ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,19 +43,16 @@ class ShopInfoTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
-        // ↑仮の行数
+        return shopInfo.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ShopInfoCell", for: indexPath) as! ShopInfoTableViewCell
+        cell.shopInfoTitleLabel.text = shopInfo[indexPath.row].key
+        cell.shopInfoValueLabel.text = shopInfo[indexPath.row].value
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

@@ -21,6 +21,7 @@
 		3BB9DF0F209EE8450067EC0A /* ShopInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB9DF0E209EE8450067EC0A /* ShopInfoTableViewController.swift */; };
 		3BB9DF11209EED9F0067EC0A /* ShopPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB9DF10209EED9F0067EC0A /* ShopPageViewController.swift */; };
 		3BB9DF13209EEFA10067EC0A /* ShopMenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB9DF12209EEFA10067EC0A /* ShopMenusViewController.swift */; };
+		3BB9DF15209EFE160067EC0A /* ShopInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB9DF14209EFE160067EC0A /* ShopInfoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		3BB9DF0E209EE8450067EC0A /* ShopInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopInfoTableViewController.swift; sourceTree = "<group>"; };
 		3BB9DF10209EED9F0067EC0A /* ShopPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopPageViewController.swift; sourceTree = "<group>"; };
 		3BB9DF12209EEFA10067EC0A /* ShopMenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopMenusViewController.swift; sourceTree = "<group>"; };
+		3BB9DF14209EFE160067EC0A /* ShopInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopInfoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				3BB74E27208B02760095B3A5 /* AppDelegate.swift */,
 				3BB74E29208B02760095B3A5 /* ViewController.swift */,
 				3BB74E2B208B02760095B3A5 /* Main.storyboard */,
+				3BB9DF14209EFE160067EC0A /* ShopInfoTableViewCell.swift */,
 				3BB9DF12209EEFA10067EC0A /* ShopMenusViewController.swift */,
 				3BB9DF10209EED9F0067EC0A /* ShopPageViewController.swift */,
 				3BB9DF0E209EE8450067EC0A /* ShopInfoTableViewController.swift */,
@@ -173,6 +176,7 @@
 				3BB74E28208B02760095B3A5 /* AppDelegate.swift in Sources */,
 				3B242D6A2097312B00D87AC7 /* PrefTableViewCell.swift in Sources */,
 				3B242D6E2099C75E00D87AC7 /* ShopsTableViewCell.swift in Sources */,
+				3BB9DF15209EFE160067EC0A /* ShopInfoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

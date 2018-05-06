@@ -249,14 +249,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="fcA-xg-bHN">
+                            <rect key="frame" x="0.0" y="78" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ijm-33-Fmw">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShopInfoCell" rowHeight="50" id="ijm-33-Fmw" customClass="ShopInfoTableViewCell" customModule="TKG" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ijm-33-Fmw" id="Xm4-28-Hq4">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="住所" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eE-Dz-LJ2">
+                                            <rect key="frame" x="10" y="10" width="100" height="29.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="IQS-4e-TDm"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUa-Rx-aBt">
+                                            <rect key="frame" x="120" y="10" width="190" height="29.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="8eE-Dz-LJ2" firstAttribute="top" secondItem="Xm4-28-Hq4" secondAttribute="top" constant="10" id="EsN-sB-yc0"/>
+                                        <constraint firstAttribute="bottom" secondItem="VUa-Rx-aBt" secondAttribute="bottom" constant="10" id="HOo-Ns-6kM"/>
+                                        <constraint firstItem="VUa-Rx-aBt" firstAttribute="top" secondItem="Xm4-28-Hq4" secondAttribute="top" constant="10" id="Mda-GC-zjl"/>
+                                        <constraint firstItem="VUa-Rx-aBt" firstAttribute="leading" secondItem="8eE-Dz-LJ2" secondAttribute="trailing" constant="10" id="UUS-GM-yRU"/>
+                                        <constraint firstItem="8eE-Dz-LJ2" firstAttribute="leading" secondItem="Xm4-28-Hq4" secondAttribute="leading" constant="10" id="h7K-mS-cVZ"/>
+                                        <constraint firstAttribute="bottom" secondItem="8eE-Dz-LJ2" secondAttribute="bottom" constant="10" id="rP1-J6-c9D"/>
+                                        <constraint firstAttribute="trailing" secondItem="VUa-Rx-aBt" secondAttribute="trailing" constant="10" id="z6D-6m-lh9"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="shopInfoTitleLabel" destination="8eE-Dz-LJ2" id="NRN-gO-lGc"/>
+                                    <outlet property="shopInfoValueLabel" destination="VUa-Rx-aBt" id="04l-x5-hBC"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -267,7 +302,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJp-rI-jty" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4262" y="1182"/>
+            <point key="canvasLocation" x="4261.875" y="1180.9859154929577"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iZR-xr-BFF">
