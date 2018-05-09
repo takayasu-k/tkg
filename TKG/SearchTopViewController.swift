@@ -10,31 +10,44 @@ import UIKit
 
 // APIの実装ができるまでの仮データ
 // 実装後は削除する
-let prefectures =  [
-  (prefID:"1",prefName:"北海道",shopCount:"3"),
-  (prefID:"3",prefName:"秋田",shopCount:"2"),
-  (prefID:"10",prefName:"東京",shopCount:"100"),
-  (prefID:"25",prefName:"千葉",shopCount:"20"),
-  (prefID:"30",prefName:"神奈川",shopCount:"13"),
-  (prefID:"33",prefName:"京都",shopCount:"5"),
-  (prefID:"45",prefName:"福岡",shopCount:"10")
-]
+//let prefectures =  [
+//  (prefID:"1",prefName:"北海道",shopCount:"3"),
+//  (prefID:"3",prefName:"秋田",shopCount:"2"),
+//  (prefID:"10",prefName:"東京",shopCount:"100"),
+//  (prefID:"25",prefName:"千葉",shopCount:"20"),
+//  (prefID:"30",prefName:"神奈川",shopCount:"13"),
+//  (prefID:"33",prefName:"京都",shopCount:"5"),
+//  (prefID:"45",prefName:"福岡",shopCount:"10")
+//]
 
 class SearchTopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   @IBOutlet weak var prefTableView: UITableView!
-  
   @IBOutlet weak var searchBar: UISearchBar!
+  
+  // 店舗のある都道府県一覧と店舗数を返すURL
+  let prefUrl = "http://menumeal.jp/shops/search"
+  
+  // テーブルビューに表示するための都道府県名の情報
+  var prefDataArray = [PrefData]()
   
   override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         prefTableView.delegate = self
         prefTableView.dataSource = self
-    }
+  }
+  
   override func viewDidAppear(_ animated: Bool) {
     self.navigationController?.setNavigationBarHidden(true, animated: false)
+  }
+  
+  // 画面が表示される直前に毎回行われる↓
+  override func viewWillAppear(_ animated: Bool) {
+    // 保持している県情報を一旦削除
+    prefDataArray.removeAll()
+    
+    request(requestUrl: prefUrl)
   }
 
     override func didReceiveMemoryWarning() {
@@ -42,20 +55,72 @@ class SearchTopViewController: UIViewController, UITableViewDelegate, UITableVie
         // Dispose of any resources that can be recreated.
     }
   
+  // リクエストを行うメソッド
+  func request(requestUrl: String) {
+    // URL生成
+    guard let url = URL(string: requestUrl) else {
+      // URL生成失敗
+      return
+    }
+    // リクエスト生成
+    let request = URLRequest(url: url)
+    // 商品検索APIをコールして商品検索を行う
+    let session = URLSession.shared
+    let task = session.dataTask(with: request) {
+      (data:Data?, response:URLResponse?, error:Error?) in
+      // 通信完了後の処理
+      // エラーチェック
+      guard error == nil else {
+        // error表示
+        let alert = UIAlertController(title: "エラー",
+                                      message: error?.localizedDescription,
+                                      preferredStyle: UIAlertControllerStyle.alert)
+        // UIに関する処理はメインスレッド上で行う
+        DispatchQueue.main.async {
+          self.present(alert, animated: true, completion: nil)
+        }
+        return
+      }
+      // JSONで返却されたデータをパースして格納する
+      guard let data = data else {
+        // データなし
+        return
+      }
+      
+      do {
+        // パース実施
+        let prefData =
+          try JSONDecoder().decode([PrefData].self, from: data)
+        // 商品のリストに追加
+        self.prefDataArray.append(contentsOf: prefData)
+      } catch let error {
+        print("## error: \(error)")
+      }
+      
+      // テーブルの描画処理を実施
+      DispatchQueue.main.async {
+        self.prefTableView.reloadData()
+      }
+      
+    }
+    // 通信開始
+    task.resume()
+  }
+  
   func numberOfSections(in tableView: UITableView) -> Int {
     return 1
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     // 表示する行の数を返す
-    return prefectures.count
+    return prefDataArray.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "PrefCell", for: indexPath) as! PrefTableViewCell
-    let prefData = prefectures[(indexPath as NSIndexPath).row]
+    let prefData = prefDataArray[(indexPath as NSIndexPath).row]
     cell.prefName.text = prefData.prefName
-    cell.shopCount.text = "(\(prefData.shopCount))"
+    cell.shopCount.text = "(\(String(prefData.shopCount)))"
     
     return cell
   }
@@ -65,7 +130,7 @@ class SearchTopViewController: UIViewController, UITableViewDelegate, UITableVie
       // タップした行番号を取り出す
       if let indexPath = self.prefTableView.indexPathForSelectedRow {
         // 行のデータを取り出す
-        let prefData = prefectures[(indexPath).row]
+        let prefData = prefDataArray[(indexPath).row]
         // 移動先ビューコントローラのprefDataプロパティに値を設定する
         (segue.destination as! ShopsTableViewController).prefData = prefData
       }

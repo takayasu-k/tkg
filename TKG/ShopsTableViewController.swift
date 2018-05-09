@@ -22,7 +22,8 @@ class ShopsTableViewController: UITableViewController {
     (shopID:"7",shopName:"たまごや食堂やませ",shopAddress:"栃木県佐野市吉水町211-1 石川たまごや内", shopImage: "shopSample7.jpg")
   ]
   
-  var prefData:(prefID:String,prefName:String,shopCount:String)!
+  // 前画面(都道府県名一覧)から受け取った都道府県のデータ
+  var prefData: PrefData!
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,0 +1,25 @@
+//
+//  PrefData.swift
+//  TKG
+//
+//  Created by taka on 2018/05/09.
+//  Copyright © 2018年 tkg. All rights reserved.
+//
+
+import Foundation
+
+
+// 店舗のある都道府県と店舗数の一覧を受け取るための構造体
+struct PrefData: Codable {
+  var id: Int?
+  var prefID: Int
+  var prefName: String
+  var shopCount: Int
+  
+  private enum CodingKeys: String, CodingKey {
+    case id = "id"
+    case prefID = "pref_id"
+    case prefName = "pref_name"
+    case shopCount = "shop_count"
+  }
+}
