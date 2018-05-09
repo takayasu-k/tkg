@@ -8,17 +8,6 @@
 
 import UIKit
 
-// APIの実装ができるまでの仮データ
-// 実装後は削除する
-//let prefectures =  [
-//  (prefID:"1",prefName:"北海道",shopCount:"3"),
-//  (prefID:"3",prefName:"秋田",shopCount:"2"),
-//  (prefID:"10",prefName:"東京",shopCount:"100"),
-//  (prefID:"25",prefName:"千葉",shopCount:"20"),
-//  (prefID:"30",prefName:"神奈川",shopCount:"13"),
-//  (prefID:"33",prefName:"京都",shopCount:"5"),
-//  (prefID:"45",prefName:"福岡",shopCount:"10")
-//]
 
 class SearchTopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
