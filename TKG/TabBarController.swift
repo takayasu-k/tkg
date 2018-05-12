@@ -5,6 +5,7 @@
 //  Created by taka on 2018/05/06.
 //  Copyright © 2018年 tkg. All rights reserved.
 //
+// タブバーのコントローラー
 
 import UIKit
 

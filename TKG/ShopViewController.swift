@@ -6,6 +6,8 @@
 //  Copyright © 2018年 tkg. All rights reserved.
 //
 
+// 店舗詳細画面(店舗トップ)のビューコントローラ
+
 import UIKit
 
 class ShopViewController: UIViewController {

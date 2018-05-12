@@ -1,19 +1,20 @@
 //
-//  PrefTableViewCell.swift
+//  ShopMenusTableViewCell.swift
 //  TKG
 //
-//  Created by taka on 2018/04/30.
+//  Created by taka on 2018/05/12.
 //  Copyright © 2018年 tkg. All rights reserved.
 //
 
-// 検索TOP画面に表示される、店舗のある都道府県の一覧を表示するテーブルビュー
+// メニュー一覧テーブルのカスタムセルクラス
 
 import UIKit
 
-class PrefTableViewCell: UITableViewCell {
+class ShopMenusTableViewCell: UITableViewCell {
 
-  @IBOutlet weak var prefName: UILabel!
-  @IBOutlet weak var shopCount: UILabel!
+  @IBOutlet weak var menuImageView: UIImageView!
+  @IBOutlet weak var menuNameLabel: UILabel!
+  @IBOutlet weak var menuPriceLabel: UILabel!
   
   override func awakeFromNib() {
         super.awakeFromNib()

@@ -6,6 +6,8 @@
 //  Copyright © 2018年 tkg. All rights reserved.
 //
 
+// 店舗詳細画面内のコンテナビューに接続される画面のコントローラー([詳細情報]と[メニュー一覧]を切り替える)
+
 import UIKit
 
 class ShopPageViewController: UIPageViewController {

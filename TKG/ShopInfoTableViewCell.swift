@@ -6,6 +6,8 @@
 //  Copyright © 2018年 tkg. All rights reserved.
 //
 
+// 店舗詳細画面の店舗情報表示用カスタムテーブルセルクラス
+
 import UIKit
 
 class ShopInfoTableViewCell: UITableViewCell {

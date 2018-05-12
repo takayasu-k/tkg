@@ -40,18 +40,17 @@ class ShopsTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        // テーブルのセクション数を返す(必須)
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        // テーブルの行数を返す(必須)
         return shopDataArray.count
     }
 
@@ -69,7 +68,7 @@ class ShopsTableViewController: UITableViewController {
   
   // セグエで移動する前にデータを受け渡す
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    // セグエがshowShopのときに処理
+    // セグエがshowShop(店舗詳細画面を表示する)のときに処理
     if segue.identifier == "showShop" {
       // タップした行番号を取り出す
       if let indexPath = self.tableView.indexPathForSelectedRow {
