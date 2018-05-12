@@ -25,6 +25,7 @@
 		3BB9DF17209F3A530067EC0A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB9DF16209F3A530067EC0A /* TabBarController.swift */; };
 		3BB9DF1920A2CCD50067EC0A /* PrefData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB9DF1820A2CCD50067EC0A /* PrefData.swift */; };
 		3BB9DF4520A6CEEE0067EC0A /* ShopMenusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB9DF4420A6CEEE0067EC0A /* ShopMenusTableViewCell.swift */; };
+		3BB9DF4720A704BD0067EC0A /* ShopMenusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB9DF4620A704BD0067EC0A /* ShopMenusTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		3BB9DF16209F3A530067EC0A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		3BB9DF1820A2CCD50067EC0A /* PrefData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefData.swift; sourceTree = "<group>"; };
 		3BB9DF4420A6CEEE0067EC0A /* ShopMenusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopMenusTableViewCell.swift; sourceTree = "<group>"; };
+		3BB9DF4620A704BD0067EC0A /* ShopMenusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopMenusTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				3BB74E27208B02760095B3A5 /* AppDelegate.swift */,
 				3BB74E29208B02760095B3A5 /* ViewController.swift */,
 				3BB74E2B208B02760095B3A5 /* Main.storyboard */,
+				3BB9DF4620A704BD0067EC0A /* ShopMenusTableViewController.swift */,
 				3BB9DF4420A6CEEE0067EC0A /* ShopMenusTableViewCell.swift */,
 				3BB9DF1820A2CCD50067EC0A /* PrefData.swift */,
 				3BB9DF16209F3A530067EC0A /* TabBarController.swift */,
@@ -188,6 +191,7 @@
 				3BB74E28208B02760095B3A5 /* AppDelegate.swift in Sources */,
 				3B242D6A2097312B00D87AC7 /* PrefTableViewCell.swift in Sources */,
 				3B242D6E2099C75E00D87AC7 /* ShopsTableViewCell.swift in Sources */,
+				3BB9DF4720A704BD0067EC0A /* ShopMenusTableViewController.swift in Sources */,
 				3BB9DF15209EFE160067EC0A /* ShopInfoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

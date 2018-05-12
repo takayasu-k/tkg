@@ -22,8 +22,8 @@ class ShopPageViewController: UIPageViewController {
   func getShopInfo() -> ShopInfoTableViewController {
     return storyboard!.instantiateViewController(withIdentifier: "ShopInfoTableViewController") as!ShopInfoTableViewController
   }
-  func getShopMenus() -> ShopMenusViewController {
-    return storyboard!.instantiateViewController(withIdentifier: "ShopMenusViewController") as! ShopMenusViewController
+  func getShopMenusTable() -> ShopMenusTableViewController {
+    return storyboard!.instantiateViewController(withIdentifier: "ShopMenusTableViewController") as! ShopMenusTableViewController
   }
 
     override func didReceiveMemoryWarning() {
@@ -46,8 +46,8 @@ class ShopPageViewController: UIPageViewController {
 extension ShopPageViewController : UIPageViewControllerDataSource {
   
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-    if viewController.isKind(of: ShopMenusViewController.self) {
-      // ShopMenus -> ShopInfoTable
+    if viewController.isKind(of: ShopMenusTableViewController.self) {
+      // ShopMenusTable -> ShopInfoTable
       return getShopInfo()
     } else {
       //  -> end of the road
@@ -58,7 +58,7 @@ extension ShopPageViewController : UIPageViewControllerDataSource {
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
     if viewController.isKind(of: ShopInfoTableViewController.self) {
       // ShopInfoTable -> ShopMenus
-      return getShopMenus()
+      return getShopMenusTable()
     } else {
       //  -> end of the road
       return nil
