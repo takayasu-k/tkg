@@ -21,7 +21,7 @@ class ShopsTableViewController: UITableViewController {
     (shopID:"6",shopName:"九十九里ファーム たまご屋さんコッコ",shopAddress:"〒289-2232 千葉県香取郡多古町多古町喜多413-44", shopImage: "shopSample6.jpg"),
     (shopID:"7",shopName:"たまごや食堂やませ",shopAddress:"栃木県佐野市吉水町211-1 石川たまごや内", shopImage: "shopSample7.jpg")
   ]
-  
+  var imageUrl: String? = "https://s3-ap-northeast-1.amazonaws.com/mmx-s3-bucket01/uploads/shop/prof_picture/4/E189D55A-125F-48B7-8F31-C58F6FE2A01B.jpeg"
   // 前画面(都道府県名一覧)から受け取った都道府県のデータ
   var prefData: PrefData!
 
@@ -59,7 +59,40 @@ class ShopsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShopCell", for: indexPath) as! ShopsTableViewCell
         let shopData = shopDataArray[indexPath.row]
       
-        cell.shopImageView.image = UIImage(named: shopData.shopImage)
+        // 仮の画像表示のための処理
+        guard let imageUrl = imageUrl else {
+          // 画像なしの場合
+          return cell
+        }
+        // 画像をダウンロードする
+        guard let url = URL(string: imageUrl) else {
+          // urlが生成できなかった
+          return cell
+        }
+        let request = URLRequest(url: url)
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { (data:Data?, response:URLResponse?, error: Error?) in
+        guard error == nil else {
+          // エラー有り
+          return
+        }
+        guard let data = data else {
+          // データが存在しない
+          return
+        }
+        guard let image = UIImage(data: data) else {
+          // imageが生成できなかった
+          return
+        }
+        // 画像はメインスレッド上で処理する
+        DispatchQueue.main.async {
+          cell.shopImageView.image = image
+        }
+      }
+      // 画像の読み込み開始
+      task.resume()
+      
+//        cell.shopImageView.image = UIImage(named: shopData.shopImage)
         cell.shopNameLabel.text = shopData.shopName
         cell.shopAddressLabel.text = shopData.shopAddress
 
