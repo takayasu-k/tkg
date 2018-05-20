@@ -166,9 +166,9 @@
                                                 </subviews>
                                             </stackView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IKW-Tl-dZN">
-                                                <rect key="frame" x="0.0" y="290" width="320" height="1600"/>
+                                                <rect key="frame" x="0.0" y="290" width="320" height="1047"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="1600" id="sDY-7m-dPj" userLabel="height = 600"/>
+                                                    <constraint firstAttribute="height" constant="1047" id="sDY-7m-dPj" userLabel="height = 600"/>
                                                 </constraints>
                                                 <connections>
                                                     <segue destination="upv-SV-C4U" kind="embed" id="vBD-4i-Nb9"/>
@@ -178,7 +178,7 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="d7N-dH-hBZ" firstAttribute="leading" secondItem="2pQ-30-L7F" secondAttribute="leading" id="BB6-e8-0rv"/>
-                                            <constraint firstAttribute="bottom" secondItem="IKW-Tl-dZN" secondAttribute="bottom" constant="-553" id="DIF-e0-UH1"/>
+                                            <constraint firstAttribute="bottom" secondItem="IKW-Tl-dZN" secondAttribute="bottom" id="DIF-e0-UH1"/>
                                             <constraint firstItem="d7N-dH-hBZ" firstAttribute="top" secondItem="2pQ-30-L7F" secondAttribute="top" id="EpN-yr-5mM"/>
                                             <constraint firstItem="IKW-Tl-dZN" firstAttribute="top" secondItem="Ym3-k4-9Er" secondAttribute="bottom" id="K3f-xH-Gko"/>
                                             <constraint firstItem="Ym3-k4-9Er" firstAttribute="trailing" secondItem="IKW-Tl-dZN" secondAttribute="trailing" id="WQK-XH-FaI"/>
@@ -218,7 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGx-Q3-Jfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3568.125" y="1295.0704225352113"/>
+            <point key="canvasLocation" x="2782.5" y="1336.2676056338028"/>
         </scene>
         <!--Shop Page View Controller-->
         <scene sceneID="jgk-ic-365">
@@ -226,12 +226,12 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="upv-SV-C4U" customClass="ShopPageViewController" customModule="TKG" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PN8-la-YY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4477.5" y="1449.2957746478874"/>
+            <point key="canvasLocation" x="4901" y="1338"/>
         </scene>
         <!--Shop Menus Table View Controller-->
         <scene sceneID="JDI-AA-Xaw">
             <objects>
-                <tableViewController storyboardIdentifier="ShopMenusTableViewController" hidesBottomBarWhenPushed="YES" id="hha-Qm-q5V" customClass="ShopMenusTableViewController" customModule="TKG" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ShopMenusTableViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="hha-Qm-q5V" customClass="ShopMenusTableViewController" customModule="TKG" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="40" id="Mb4-go-hAq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -300,7 +300,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QNV-B8-vhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5276.25" y="1928.8732394366198"/>
+            <point key="canvasLocation" x="5599" y="1779"/>
         </scene>
         <!--Shop Info Table View Controller-->
         <scene sceneID="bOV-zT-oka">
