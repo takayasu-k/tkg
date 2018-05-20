@@ -80,7 +80,7 @@ class SearchTopViewController: UIViewController, UITableViewDelegate, UITableVie
         // パース実施
         let prefData =
           try JSONDecoder().decode([PrefData].self, from: data)
-        // 商品のリストに追加
+        // 県名のリストに追加
         self.prefDataArray.append(contentsOf: prefData)
       } catch let error {
         print("## error: \(error)")
