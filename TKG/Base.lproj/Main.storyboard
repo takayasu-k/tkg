@@ -43,7 +43,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="44L-Up-jHv"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ホーム" image="homeButtonIcon25px" id="093-Xb-fIf"/>
+                    <tabBarItem key="tabBarItem" title="ホーム" image="homeButtonIcon" id="093-Xb-fIf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eVd-4D-cbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -597,7 +597,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="homeButtonIcon25px" width="25" height="25"/>
+        <image name="homeButtonIcon" width="25" height="25"/>
         <image name="tkg" width="640" height="400"/>
     </resources>
 </document>
