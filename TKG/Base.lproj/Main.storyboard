@@ -215,11 +215,13 @@
                     <connections>
                         <outlet property="shopImageView" destination="d7N-dH-hBZ" id="SeJ-UG-sZc"/>
                         <outlet property="shopNameTitle" destination="bZF-gU-aIR" id="Ia9-Dj-Y6f"/>
+                        <outlet property="showShopInfoButton" destination="vRG-xt-FSy" id="sgP-0a-q8V"/>
+                        <outlet property="showShopMenuButton" destination="5JG-aE-tbf" id="IAN-BR-d14"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGx-Q3-Jfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2782.5" y="1336.2676056338028"/>
+            <point key="canvasLocation" x="2483" y="1305"/>
         </scene>
         <!--Shop Page View Controller-->
         <scene sceneID="jgk-ic-365">
@@ -227,7 +229,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="upv-SV-C4U" customClass="ShopPageViewController" customModule="TKG" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PN8-la-YY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3576" y="1337"/>
+            <point key="canvasLocation" x="3484" y="1305"/>
         </scene>
         <!--Shop Menus Table View Controller-->
         <scene sceneID="JDI-AA-Xaw">

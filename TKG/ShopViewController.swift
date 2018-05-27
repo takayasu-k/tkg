@@ -16,8 +16,9 @@ class ShopViewController: UIViewController {
   var shopData:(shopID:String,shopName:String,shopAddress:String,shopImage:String)?
 
   @IBOutlet weak var shopImageView: UIImageView! // 店舗トップ画像imageView
-  
   @IBOutlet weak var shopNameTitle: UINavigationItem! // navigationItem店舗名
+  @IBOutlet weak var showShopInfoButton: UIButton!
+  @IBOutlet weak var showShopMenuButton: UIButton!
   
   override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +35,11 @@ class ShopViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
+  
+  
+  
     /*
-    // MARK: - Navigation
+   // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
