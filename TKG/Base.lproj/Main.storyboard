@@ -227,7 +227,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="upv-SV-C4U" customClass="ShopPageViewController" customModule="TKG" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PN8-la-YY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4901" y="1338"/>
+            <point key="canvasLocation" x="3576" y="1337"/>
         </scene>
         <!--Shop Menus Table View Controller-->
         <scene sceneID="JDI-AA-Xaw">
@@ -301,7 +301,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QNV-B8-vhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5599" y="1779"/>
+            <point key="canvasLocation" x="5034" y="1084"/>
         </scene>
         <!--Shop Info Table View Controller-->
         <scene sceneID="bOV-zT-oka">
@@ -366,7 +366,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJp-rI-jty" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4249" y="1169"/>
+            <point key="canvasLocation" x="4290" y="1084"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iZR-xr-BFF">

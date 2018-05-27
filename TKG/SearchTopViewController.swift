@@ -53,7 +53,7 @@ class SearchTopViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     // リクエスト生成
     let request = URLRequest(url: url)
-    // 商品検索APIをコールして商品検索を行う
+    
     let session = URLSession.shared
     let task = session.dataTask(with: request) {
       (data:Data?, response:URLResponse?, error:Error?) in
