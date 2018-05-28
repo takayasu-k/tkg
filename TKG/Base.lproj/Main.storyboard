@@ -25,6 +25,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Yd2-b1-Odo"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="店舗を探す">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -234,7 +235,7 @@
         <!--Shop Menus Table View Controller-->
         <scene sceneID="JDI-AA-Xaw">
             <objects>
-                <tableViewController storyboardIdentifier="ShopMenusTableViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="hha-Qm-q5V" customClass="ShopMenusTableViewController" customModule="TKG" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ShopMenusTableViewController" hidesBottomBarWhenPushed="YES" id="hha-Qm-q5V" customClass="ShopMenusTableViewController" customModule="TKG" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="40" id="Mb4-go-hAq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -288,6 +289,7 @@
                                         <constraint firstAttribute="trailing" secondItem="CJu-o3-QTJ" secondAttribute="trailing" constant="10" id="uSx-4l-BSa"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <connections>
                                     <outlet property="menuImageView" destination="I7R-n5-JFo" id="LeC-69-h9j"/>
                                     <outlet property="menuNameLabel" destination="7Xj-fu-egc" id="aCa-So-Q23"/>
@@ -442,7 +444,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r73-6W-4fA">
                                                     <rect key="frame" x="15" y="19" width="0.0" height="0.0"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
