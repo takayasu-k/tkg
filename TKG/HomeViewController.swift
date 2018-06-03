@@ -20,7 +20,10 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+  
+  @IBAction func tapSearchButton(_ sender: Any) {
+    self.tabBarController?.selectedIndex = 1
+  }
 
     /*
     // MARK: - Navigation
