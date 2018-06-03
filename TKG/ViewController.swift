@@ -10,11 +10,12 @@
 // Moreタブ用ビューコントローラ（暫定）
 import UIKit
 
-let settingsTitle = ["最新情報", "フィードバック", "アプリについて"]
+let settingsTitle = ["Twitter", "アプリについて"]
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   @IBOutlet weak var settingsTableView: UITableView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -40,9 +41,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //     テーブルビュー必須メソッド：セルの設定
-    let cell = tableView.dequeueReusableCell(withIdentifier: "settingsCell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "settingsCell", for: indexPath) as! SettingsTableViewCell
     let settingsData = settingsTitle[(indexPath as NSIndexPath).row]
-    cell.textLabel?.text = settingsData
+    cell.settingsContentLabel.text = settingsData
 
     return cell
   }

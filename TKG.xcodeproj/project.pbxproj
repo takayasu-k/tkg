@@ -26,6 +26,7 @@
 		3BB9DF1920A2CCD50067EC0A /* PrefData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB9DF1820A2CCD50067EC0A /* PrefData.swift */; };
 		3BB9DF4520A6CEEE0067EC0A /* ShopMenusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB9DF4420A6CEEE0067EC0A /* ShopMenusTableViewCell.swift */; };
 		3BB9DF4720A704BD0067EC0A /* ShopMenusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB9DF4620A704BD0067EC0A /* ShopMenusTableViewController.swift */; };
+		3BFF021020C3C0AB0032C1EE /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFF020F20C3C0AB0032C1EE /* SettingsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		3BB9DF1820A2CCD50067EC0A /* PrefData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefData.swift; sourceTree = "<group>"; };
 		3BB9DF4420A6CEEE0067EC0A /* ShopMenusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopMenusTableViewCell.swift; sourceTree = "<group>"; };
 		3BB9DF4620A704BD0067EC0A /* ShopMenusTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopMenusTableViewController.swift; sourceTree = "<group>"; };
+		3BFF020F20C3C0AB0032C1EE /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				3BB74E27208B02760095B3A5 /* AppDelegate.swift */,
 				3BB74E29208B02760095B3A5 /* ViewController.swift */,
 				3BB74E2B208B02760095B3A5 /* Main.storyboard */,
+				3BFF020F20C3C0AB0032C1EE /* SettingsTableViewCell.swift */,
 				3BB9DF4620A704BD0067EC0A /* ShopMenusTableViewController.swift */,
 				3BB9DF4420A6CEEE0067EC0A /* ShopMenusTableViewCell.swift */,
 				3BB9DF1820A2CCD50067EC0A /* PrefData.swift */,
@@ -188,6 +191,7 @@
 				3BB9DF13209EEFA10067EC0A /* ShopMenusViewController.swift in Sources */,
 				3BB9DF11209EED9F0067EC0A /* ShopPageViewController.swift in Sources */,
 				3B88D58A2099F76D00717102 /* ShopNavigationController.swift in Sources */,
+				3BFF021020C3C0AB0032C1EE /* SettingsTableViewCell.swift in Sources */,
 				3BB74E28208B02760095B3A5 /* AppDelegate.swift in Sources */,
 				3B242D6A2097312B00D87AC7 /* PrefTableViewCell.swift in Sources */,
 				3B242D6E2099C75E00D87AC7 /* ShopsTableViewCell.swift in Sources */,
