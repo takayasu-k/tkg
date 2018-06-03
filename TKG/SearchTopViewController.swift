@@ -15,7 +15,7 @@ class SearchTopViewController: UIViewController, UITableViewDelegate, UITableVie
   @IBOutlet weak var searchBar: UISearchBar!
   
   // 店舗のある都道府県一覧と店舗数を返すURL
-  let prefUrl = "http://menumeal.jp/shops/search"
+  let prefUrl = "http://menumeal.jp/pref_shops/search"
   
   // テーブルビューに表示するための都道府県名の情報
   var prefDataArray = [PrefData]()
