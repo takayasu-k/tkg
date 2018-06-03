@@ -140,7 +140,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="1700"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pQ-30-L7F">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1700"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d7N-dH-hBZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
@@ -168,10 +168,7 @@
                                                 </subviews>
                                             </stackView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IKW-Tl-dZN">
-                                                <rect key="frame" x="0.0" y="290" width="320" height="1047"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1047" id="sDY-7m-dPj" userLabel="height = 600"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="290" width="320" height="1410"/>
                                                 <connections>
                                                     <segue destination="upv-SV-C4U" kind="embed" id="vBD-4i-Nb9"/>
                                                 </connections>
@@ -196,6 +193,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="2pQ-30-L7F" secondAttribute="trailing" id="9HU-LU-Q1x"/>
                                     <constraint firstAttribute="bottom" secondItem="2pQ-30-L7F" secondAttribute="bottom" constant="363" id="Q87-bV-4Uz"/>
+                                    <constraint firstItem="2pQ-30-L7F" firstAttribute="height" secondItem="4Jg-7P-caF" secondAttribute="height" id="TgZ-lK-xxJ"/>
                                     <constraint firstItem="2pQ-30-L7F" firstAttribute="top" secondItem="4Jg-7P-caF" secondAttribute="top" id="ZP4-1P-Nlz"/>
                                     <constraint firstItem="2pQ-30-L7F" firstAttribute="leading" secondItem="4Jg-7P-caF" secondAttribute="leading" id="gwm-tr-qsu"/>
                                     <constraint firstItem="2pQ-30-L7F" firstAttribute="centerX" secondItem="4Jg-7P-caF" secondAttribute="centerX" id="iNR-0v-Xgo"/>
@@ -230,7 +228,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="upv-SV-C4U" customClass="ShopPageViewController" customModule="TKG" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PN8-la-YY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3336" y="1305"/>
+            <point key="canvasLocation" x="3184" y="1645"/>
         </scene>
         <!--Shop Menus Table View Controller-->
         <scene sceneID="JDI-AA-Xaw">

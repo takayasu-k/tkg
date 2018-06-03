@@ -10,7 +10,7 @@
 // Moreタブ用ビューコントローラ（暫定）
 import UIKit
 
-let settingsTitle = ["最新情報", "フィードバック", "アプリについて", "応援する"]
+let settingsTitle = ["最新情報", "フィードバック", "アプリについて"]
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
