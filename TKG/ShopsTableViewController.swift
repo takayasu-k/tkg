@@ -29,7 +29,7 @@ class ShopsTableViewController: UITableViewController {
   
   var imageUrl: String? = "https://s3-ap-northeast-1.amazonaws.com/mmx-s3-bucket01/uploads/shop/prof_picture/4/E189D55A-125F-48B7-8F31-C58F6FE2A01B.jpeg"
   
-
+  var imageCache = NSCache<AnyObject, UIImage>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,6 +129,13 @@ class ShopsTableViewController: UITableViewController {
           return cell
         }
       
+        // キャッシュ画像があればキャッシュの画像を取り出す
+        if let cacheImage = imageCache.object(forKey: thumb as AnyObject) {
+          // キャッシュ画像の設定
+          cell.shopImageView.image = cacheImage
+          return cell
+        }
+      
         // 画像をダウンロードする
       
         guard let url = URL(string: thumb) else {
@@ -150,6 +157,8 @@ class ShopsTableViewController: UITableViewController {
           // imageが生成できなかった
           return
         }
+        // ダウンロードした画像をキャッシュに登録しておく
+          self.imageCache.setObject(image, forKey: thumb as AnyObject)
         // 画像はメインスレッド上で処理する
         DispatchQueue.main.async {
           cell.shopImageView.image = image
@@ -172,8 +181,8 @@ class ShopsTableViewController: UITableViewController {
       if let indexPath = self.tableView.indexPathForSelectedRow {
         // 行のデータを取り出す
         let shopData = shopDataArray[(indexPath).row]
-        // 移動先のビューコントローラのdataプロパティに値を設定する
-//        (segue.destination as! ShopViewController).shopData = shopData
+//         移動先のビューコントローラのshopDataプロパティに値を設定する
+        (segue.destination as! ShopViewController).shopData = shopData
       }
     }
   }

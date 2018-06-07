@@ -13,7 +13,7 @@ import UIKit
 class ShopViewController: UIViewController {
   
   // 前画面から受け取った店舗の基本情報
-  var shopData: (shopID:String,shopName:String,shopAddress:String,shopImage:String)?
+  var shopData: ShopData!
 
   @IBOutlet weak var shopImageView: UIImageView! // 店舗トップ画像imageView
   @IBOutlet weak var shopNameTitle: UINavigationItem! // navigationItem店舗名
@@ -27,8 +27,11 @@ class ShopViewController: UIViewController {
     guard let shopData = shopData else {
       return
     }
+    guard let shopUrl = shopData.shopImage.url else {
+      return
+    }
     shopNameTitle.title = shopData.shopName
-    shopImageView.image = UIImage(named: shopData.shopImage)
+    shopImageView.image = UIImage(named: shopUrl)
     }
 
     override func didReceiveMemoryWarning() {
