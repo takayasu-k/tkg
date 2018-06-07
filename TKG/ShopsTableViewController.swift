@@ -12,20 +12,24 @@ class ShopsTableViewController: UITableViewController {
   
   // APIの実装ができるまでの仮データ
   // 実装後は削除する
-  let shopDataArray =  [
-    (shopID:"1",shopName:"十番右京",shopAddress:"東京都港区麻布十番2-6-3", shopImage: "shopSample1.jpg"),
-    (shopID:"2",shopName:"喜三郎農場",shopAddress:"東京都文京区千石1-23-11", shopImage: "shopSample2.jpg"),
-    (shopID:"3",shopName:"煙事",shopAddress:"東京都中央区銀座8-7-7 JUNOビル　１F", shopImage: "shopSample3.jpg"),
-    (shopID:"4",shopName:"赤坂うまや",shopAddress:"東京都港区赤坂4-2-32", shopImage: "shopSample4.jpg"),
-    (shopID:"5",shopName:"たまごや とよまる 松尾店",shopAddress:"〒289-1501　千葉県山武市松尾町山室431-1", shopImage: "shopSample5.jpg"),
-    (shopID:"6",shopName:"九十九里ファーム たまご屋さんコッコ",shopAddress:"〒289-2232 千葉県香取郡多古町多古町喜多413-44", shopImage: "shopSample6.jpg"),
-    (shopID:"7",shopName:"たまごや食堂やませ",shopAddress:"栃木県佐野市吉水町211-1 石川たまごや内", shopImage: "shopSample7.jpg")
-  ]
+//  let shopDataArray =  [
+//    (shopID:"1",shopName:"十番右京",shopAddress:"東京都港区麻布十番2-6-3", shopImage: "shopSample1.jpg"),
+//    (shopID:"2",shopName:"喜三郎農場",shopAddress:"東京都文京区千石1-23-11", shopImage: "shopSample2.jpg"),
+//    (shopID:"3",shopName:"煙事",shopAddress:"東京都中央区銀座8-7-7 JUNOビル　１F", shopImage: "shopSample3.jpg"),
+//    (shopID:"4",shopName:"赤坂うまや",shopAddress:"東京都港区赤坂4-2-32", shopImage: "shopSample4.jpg"),
+//    (shopID:"5",shopName:"たまごや とよまる 松尾店",shopAddress:"〒289-1501　千葉県山武市松尾町山室431-1", shopImage: "shopSample5.jpg"),
+//    (shopID:"6",shopName:"九十九里ファーム たまご屋さんコッコ",shopAddress:"〒289-2232 千葉県香取郡多古町多古町喜多413-44", shopImage: "shopSample6.jpg"),
+//    (shopID:"7",shopName:"たまごや食堂やませ",shopAddress:"栃木県佐野市吉水町211-1 石川たまごや内", shopImage: "shopSample7.jpg")
+//  ]
+  var shopDataArray = [ShopData]()
+  // 前画面(都道府県名一覧)から受け取った都道府県のデータ
+  var prefData: PrefData!
+  // 県に紐づく店舗一覧を取得するためのAPIのURL
+  var shopsUrl = ""
   
   var imageUrl: String? = "https://s3-ap-northeast-1.amazonaws.com/mmx-s3-bucket01/uploads/shop/prof_picture/4/E189D55A-125F-48B7-8F31-C58F6FE2A01B.jpeg"
   
-  // 前画面(都道府県名一覧)から受け取った都道府県のデータ
-  var prefData: PrefData!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +42,65 @@ class ShopsTableViewController: UITableViewController {
         self.navigationItem.title = prefData.prefName
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+       request(requestUrl: shopsUrl)
     }
+  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+  
+  // リクエストを行ってJSONを構造体として受け取り画面に表示するメソッド
+  func request(requestUrl: String) {
+    // URL生成
+    guard let url = URL(string: requestUrl) else {
+      // URL生成失敗
+      return
+    }
+    // リクエスト生成
+    let request = URLRequest(url: url)
+    
+    let session = URLSession.shared
+    let task = session.dataTask(with: request) {
+      (data:Data?, response:URLResponse?, error:Error?) in
+      // 通信完了後の処理
+      // エラーチェック
+      guard error == nil else {
+        // error表示
+        let alert = UIAlertController(title: "エラー",
+                                      message: error?.localizedDescription,
+                                      preferredStyle: UIAlertControllerStyle.alert)
+        // UIに関する処理はメインスレッド上で行う
+        DispatchQueue.main.async {
+          self.present(alert, animated: true, completion: nil)
+        }
+        return
+      }
+      // JSONで返却されたデータをパースして格納する
+      guard let data = data else {
+        // データなし
+        return
+      }
+      
+      do {
+        // パース実施
+        let shopData =
+          try JSONDecoder().decode([ShopData].self, from: data)
+        // 県名のリストに追加
+        self.shopDataArray.append(contentsOf: shopData)
+      } catch let error {
+        print("## error: \(error)")
+      }
+      
+      // テーブルの描画処理を実施
+      DispatchQueue.main.async {
+        self.tableView.reloadData()
+      }
+      
+    }
+    // 通信開始
+    task.resume()
+  }
 
     // MARK: - Table view data source
 
@@ -61,13 +119,19 @@ class ShopsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShopCell", for: indexPath) as! ShopsTableViewCell
         let shopData = shopDataArray[indexPath.row]
       
+        cell.shopNameLabel.text = shopData.shopName
+        cell.shopAddressLabel.text = shopData.shopAddress
+      
+        let thumbUrl = shopData.shopImage.thumb["url"]
         // 仮の画像表示のための処理
-        guard let imageUrl = imageUrl else {
+        guard let thumb = thumbUrl!  else {
           // 画像なしの場合
           return cell
         }
+      
         // 画像をダウンロードする
-        guard let url = URL(string: imageUrl) else {
+      
+        guard let url = URL(string: thumb) else {
           // urlが生成できなかった
           return cell
         }
@@ -95,8 +159,7 @@ class ShopsTableViewController: UITableViewController {
       task.resume()
       
 //        cell.shopImageView.image = UIImage(named: shopData.shopImage)
-        cell.shopNameLabel.text = shopData.shopName
-        cell.shopAddressLabel.text = shopData.shopAddress
+      
 
         return cell
     }
@@ -110,7 +173,7 @@ class ShopsTableViewController: UITableViewController {
         // 行のデータを取り出す
         let shopData = shopDataArray[(indexPath).row]
         // 移動先のビューコントローラのdataプロパティに値を設定する
-        (segue.destination as! ShopViewController).shopData = shopData
+//        (segue.destination as! ShopViewController).shopData = shopData
       }
     }
   }

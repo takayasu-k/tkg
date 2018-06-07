@@ -44,7 +44,7 @@ class SearchTopViewController: UIViewController, UITableViewDelegate, UITableVie
         // Dispose of any resources that can be recreated.
     }
   
-  // リクエストを行うメソッド
+  // リクエストを行ってJSONを構造体として受け取り画面に表示するメソッド
   func request(requestUrl: String) {
     // URL生成
     guard let url = URL(string: requestUrl) else {
@@ -122,6 +122,7 @@ class SearchTopViewController: UIViewController, UITableViewDelegate, UITableVie
         let prefData = prefDataArray[(indexPath).row]
         // 移動先ビューコントローラのprefDataプロパティに値を設定する
         (segue.destination as! ShopsTableViewController).prefData = prefData
+        (segue.destination as! ShopsTableViewController).shopsUrl = "http://menumeal.jp/pref_shops/\(String(prefData.prefID))/shops/search"
       }
     }
   }
