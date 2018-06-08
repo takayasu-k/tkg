@@ -12,6 +12,7 @@ import UIKit
 
 class ShopViewController: UIViewController {
   
+  var imageCache = NSCache<AnyObject, UIImage>()
   // 前画面から受け取った店舗の基本情報
   var shopData: ShopData!
 
@@ -31,7 +32,47 @@ class ShopViewController: UIViewController {
       return
     }
     shopNameTitle.title = shopData.shopName
-    shopImageView.image = UIImage(named: shopUrl)
+//    shopImageView.image = UIImage(named: shopUrl)
+    
+    
+    // キャッシュ画像があればキャッシュの画像を取り出す
+    if let cacheImage = imageCache.object(forKey: shopUrl as AnyObject) {
+      // キャッシュ画像の設定
+      self.shopImageView.image = cacheImage
+      return
+    }
+    
+    // キャッシュになければ画像をダウンロードする
+    
+    guard let url = URL(string: shopUrl) else {
+      // urlが生成できなかった
+      return
+    }
+    let request = URLRequest(url: url)
+    let session = URLSession.shared
+    let task = session.dataTask(with: request) { (data:Data?, response:URLResponse?, error: Error?) in
+      guard error == nil else {
+        // エラー有り
+        return
+      }
+      guard let data = data else {
+        // データが存在しない
+        return
+      }
+      guard let image = UIImage(data: data) else {
+        // imageが生成できなかった
+        return
+      }
+      // ダウンロードした画像をキャッシュに登録しておく
+      self.imageCache.setObject(image, forKey: shopUrl as AnyObject)
+      // 画像はメインスレッド上で処理する
+      DispatchQueue.main.async {
+        self.shopImageView.image = image
+      }
+    }
+    // 画像の読み込み開始
+    task.resume()
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,6 +80,7 @@ class ShopViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
   
+
   
   
     /*
