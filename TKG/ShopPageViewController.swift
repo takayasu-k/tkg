@@ -20,9 +20,11 @@ class ShopPageViewController: UIPageViewController {
     }
   
   func getShopInfo() -> ShopInfoTableViewController {
+    
     return storyboard!.instantiateViewController(withIdentifier: "ShopInfoTableViewController") as!ShopInfoTableViewController
   }
   func getShopMenusTable() -> ShopMenusTableViewController {
+    
     return storyboard!.instantiateViewController(withIdentifier: "ShopMenusTableViewController") as! ShopMenusTableViewController
   }
 
@@ -48,6 +50,9 @@ extension ShopPageViewController : UIPageViewControllerDataSource {
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
     if viewController.isKind(of: ShopMenusTableViewController.self) {
       // ShopMenusTable -> ShopInfoTable
+      
+      let parentVC = self.parent! as! ShopViewController
+      parentVC.setShopInfoButtonColor()
       return getShopInfo()
     } else {
       //  -> end of the road
@@ -58,6 +63,8 @@ extension ShopPageViewController : UIPageViewControllerDataSource {
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
     if viewController.isKind(of: ShopInfoTableViewController.self) {
       // ShopInfoTable -> ShopMenus
+      let parentVC = self.parent! as! ShopViewController
+      parentVC.setShopMenusButtonColor()
       return getShopMenusTable()
     } else {
       //  -> end of the road

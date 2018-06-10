@@ -80,9 +80,31 @@ class ShopViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
   
-
+  @IBAction func showShopInfoTapped(_ sender: Any) {
+    let childVC = self.childViewControllers[0] as! ShopPageViewController
+    if childVC.childViewControllers[0].isKind(of: ShopMenusTableViewController.self) {
+      childVC.setViewControllers([childVC.getShopInfo()], direction: .reverse, animated: true, completion: nil)
+      setShopInfoButtonColor()
+    }
+    
+  }
+  @IBAction func showShopMenuTapped(_ sender: Any) {
+    let childVC = self.childViewControllers[0] as! ShopPageViewController
+    if childVC.childViewControllers[0].isKind(of: ShopInfoTableViewController.self) {
+      childVC.setViewControllers([childVC.getShopMenusTable()], direction: .forward, animated: true, completion: nil)
+      setShopMenusButtonColor()
+    }
+    
+  }
   
-  
+  func setShopInfoButtonColor() {
+    showShopInfoButton.setTitleColor(UIColor.orange, for: .normal)
+    showShopMenuButton.setTitleColor(UIColor.lightGray, for: .normal)
+  }
+  func setShopMenusButtonColor() {
+    showShopInfoButton.setTitleColor(UIColor.lightGray, for: .normal)
+    showShopMenuButton.setTitleColor(UIColor.orange, for: .normal)
+  }
     /*
    // MARK: - Navigation
 

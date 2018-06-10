@@ -160,6 +160,9 @@
                                                         <state key="normal" title="店舗情報">
                                                             <color key="titleColor" red="0.99607843139999996" green="0.78039215689999997" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="showShopInfoTapped:" destination="Bd8-PN-X10" eventType="touchUpInside" id="EkA-0L-BUR"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JG-aE-tbf">
                                                         <rect key="frame" x="160" y="0.0" width="160" height="40"/>
@@ -167,6 +170,9 @@
                                                         <state key="normal" title="メニュー">
                                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="showShopMenuTapped:" destination="Bd8-PN-X10" eventType="touchUpInside" id="Z1x-mZ-Q4V"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -430,7 +436,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJp-rI-jty" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4063" y="865"/>
+            <point key="canvasLocation" x="4794" y="1744"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iZR-xr-BFF">
