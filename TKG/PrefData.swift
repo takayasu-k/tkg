@@ -31,6 +31,7 @@ struct ShopData: Codable {
   var shopID: Int
   var shopName: String
   var shopAddress: String
+  var shopTel: String?
   var shopImage: ShopImage
   
   struct ShopImage: Codable {
@@ -92,6 +93,7 @@ struct ShopData: Codable {
     case shopID = "id"
     case shopName = "name"
     case shopAddress = "address"
+    case shopTel = "tel"
     case shopImage = "prof_picture"
   }
 }
