@@ -32,7 +32,6 @@ class ShopViewController: UIViewController {
       return
     }
     shopNameTitle.title = shopData.shopName
-//    shopImageView.image = UIImage(named: shopUrl)
     
     
     // キャッシュ画像があればキャッシュの画像を取り出す
@@ -43,7 +42,6 @@ class ShopViewController: UIViewController {
     }
     
     // キャッシュになければ画像をダウンロードする
-    
     guard let url = URL(string: shopUrl) else {
       // urlが生成できなかった
       return
