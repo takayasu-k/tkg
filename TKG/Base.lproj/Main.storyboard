@@ -301,7 +301,7 @@
                                     <outlet property="menuImageView" destination="I7R-n5-JFo" id="LeC-69-h9j"/>
                                     <outlet property="menuNameLabel" destination="7Xj-fu-egc" id="aCa-So-Q23"/>
                                     <outlet property="menuPriceLabel" destination="CJu-o3-QTJ" id="cBx-qq-VpT"/>
-                                    <segue destination="p9C-ne-YTk" kind="show" id="cod-ee-Ril"/>
+                                    <segue destination="p9C-ne-YTk" kind="show" identifier="showMenu" id="cod-ee-Ril"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

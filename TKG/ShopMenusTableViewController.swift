@@ -169,6 +169,21 @@ class ShopMenusTableViewController: UITableViewController {
     // 通信開始
     task.resume()
   }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "showMenu" {
+      // タップした行番号を取り出す
+      if let indexPath = self.tableView.indexPathForSelectedRow {
+        // 行のデータを取り出す
+        let menuData = menuDataArray[(indexPath).row]
+        // 移動先ビューコントローラのprefDataプロパティに値を設定する
+        (segue.destination as! MenuDetailViewController).menuData = menuData
+        (segue.destination as! MenuDetailViewController).menuImage = imageCache.object(forKey: menuData.menuImage as AnyObject)
+      }
+    }
+  }
+  
+  
 
 
     /*

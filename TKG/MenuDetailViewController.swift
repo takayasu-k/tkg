@@ -10,8 +10,10 @@ import UIKit
 
 class MenuDetailViewController: UIViewController {
   
-  let menuData = (menuID:"2",menuName:"博多明太子の玉子焼き",menuPrice:"1100",menuImage:"menu2.jpg")
+//  let menuData = (menuID:"2",menuName:"博多明太子の玉子焼き",menuPrice:"1100",menuImage:"menu2.jpg")
 
+  var menuData: MenuData!
+  var menuImage: UIImage!
   @IBOutlet weak var menuImageView: UIImageView!
   @IBOutlet weak var menuNameLabel: UILabel!
   @IBOutlet weak var menuPriceLabel: UILabel!
@@ -20,9 +22,16 @@ class MenuDetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    menuImageView.image = UIImage(named: menuData.menuImage)
+//    menuImageView.image = UIImage(named: menuData.menuImage)
+
     menuNameLabel.text = menuData.menuName
-    menuPriceLabel.text = "¥" + menuData.menuPrice
+    menuPriceLabel.text = "¥" + String(menuData.menuPrice)
+    if let menuImage = menuImage {
+      menuImageView.image = menuImage
+    } else {
+      return
+    }
+    
     }
 
     override func didReceiveMemoryWarning() {
