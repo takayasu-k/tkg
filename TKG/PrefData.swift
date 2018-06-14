@@ -110,3 +110,18 @@ struct ShopDetail: Codable {
     case payment = "payment"
   }
 }
+
+// 店舗のメニューデータを受け取るための構造体
+struct MenuData: Codable {
+  var menuID: Int
+  var menuName: String
+  var menuPrice: Int
+  var menuImage: String?
+  
+  private enum CodingKeys: String, CodingKey {
+    case menuID = "id"
+    case menuName = "name"
+    case menuPrice = "price"
+    case menuImage = "prof_picture"
+  }
+}
