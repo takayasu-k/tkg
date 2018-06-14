@@ -11,7 +11,7 @@ import UIKit
 // 店舗の基本情報表示用テーブルビューコントローラ
 class ShopInfoTableViewController: UITableViewController {
   
-  let shopInfo:[(key:String,value:String)] = [
+  var shopInfo:[(key:String,value:String)] = [
     ("住所","東京都港区赤坂4-2-32"),
     ("電話","050-5868-2327"),
     ("営業時間","[昼]\n月～土　11:00～14:30(ラストオーダー 14:00)\n[夜]\n月～木 17:00-23:30(ラストオーダー 22:45)\n金 17:00-25:00(ラストオーダー 24:00)\n土・祝 17:00-23:00(ラストオーダー 22:00)"),
@@ -28,6 +28,14 @@ class ShopInfoTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.tableView.isScrollEnabled = false
+        let shopView = self.parent as! ShopPageViewController
+        let shopData = shopView.shopData
+        let shopID = shopView.shopData.shopID
+       let shopDetailUrl = "http://menumeal.jp/shops/\(shopID)/"
+      shopInfo[0].value = (shopData?.shopAddress)!
+      shopInfo[1].value = (shopData?.shopTel)!
+       request(requestUrl: shopDetailUrl)
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,6 +62,74 @@ class ShopInfoTableViewController: UITableViewController {
 
         return cell
     }
+  
+  // リクエストを行ってJSONを構造体として受け取り画面に表示するメソッド
+  func request(requestUrl: String) {
+    // URL生成
+    guard let url = URL(string: requestUrl) else {
+      // URL生成失敗
+      return
+    }
+    // リクエスト生成
+    let request = URLRequest(url: url)
+    
+    let session = URLSession.shared
+    let task = session.dataTask(with: request) {
+      (data:Data?, response:URLResponse?, error:Error?) in
+      // 通信完了後の処理
+      // エラーチェック
+      guard error == nil else {
+        // error表示
+        let alert = UIAlertController(title: "エラー",
+                                      message: error?.localizedDescription,
+                                      preferredStyle: UIAlertControllerStyle.alert)
+        // UIに関する処理はメインスレッド上で行う
+        DispatchQueue.main.async {
+          self.present(alert, animated: true, completion: nil)
+        }
+        return
+      }
+      // JSONで返却されたデータをパースして格納する
+      guard let data = data else {
+        // データなし
+        return
+      }
+      
+      do {
+        // パース実施
+        let shopDetail =
+          try JSONDecoder().decode(ShopDetail.self, from: data)
+        // 県名のリストに追加
+//        self.prefDataArray.append(contentsOf: prefData)
+        if let operagingHours = shopDetail.operatingHours {
+          self.shopInfo[2].value = operagingHours
+        } else {
+          self.shopInfo[2].value = ""
+        }
+        if let holiday = shopDetail.holiday {
+          self.shopInfo[3].value = holiday
+        } else {
+          self.shopInfo[3].value = ""
+        }
+        if let payment = shopDetail.payment {
+          self.shopInfo[4].value = payment
+        } else {
+          self.shopInfo[4].value = ""
+        }
+        
+      } catch let error {
+        print("## error: \(error)")
+      }
+      
+      // テーブルの描画処理を実施
+      DispatchQueue.main.async {
+        self.tableView.reloadData()
+      }
+      
+    }
+    // 通信開始
+    task.resume()
+  }
 
     /*
     // Override to support conditional editing of the table view.

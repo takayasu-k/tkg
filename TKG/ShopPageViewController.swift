@@ -11,6 +11,8 @@
 import UIKit
 
 class ShopPageViewController: UIPageViewController {
+  
+  var shopData: ShopData!
 
     override func viewDidLoad() {
         super.viewDidLoad()

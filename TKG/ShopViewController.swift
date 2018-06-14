@@ -103,6 +103,14 @@ class ShopViewController: UIViewController {
     showShopInfoButton.setTitleColor(UIColor.lightGray, for: .normal)
     showShopMenuButton.setTitleColor(UIColor.orange, for: .normal)
   }
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "shopPage" {
+  
+        // 移動先ビューコントローラのprefDataプロパティに値を設定する
+        (segue.destination as! ShopPageViewController).shopData = shopData
+    }
+  }
     /*
    // MARK: - Navigation
 
