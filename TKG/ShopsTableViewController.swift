@@ -10,17 +10,6 @@ import UIKit
 
 class ShopsTableViewController: UITableViewController {
   
-  // APIの実装ができるまでの仮データ
-  // 実装後は削除する
-//  let shopDataArray =  [
-//    (shopID:"1",shopName:"十番右京",shopAddress:"東京都港区麻布十番2-6-3", shopImage: "shopSample1.jpg"),
-//    (shopID:"2",shopName:"喜三郎農場",shopAddress:"東京都文京区千石1-23-11", shopImage: "shopSample2.jpg"),
-//    (shopID:"3",shopName:"煙事",shopAddress:"東京都中央区銀座8-7-7 JUNOビル　１F", shopImage: "shopSample3.jpg"),
-//    (shopID:"4",shopName:"赤坂うまや",shopAddress:"東京都港区赤坂4-2-32", shopImage: "shopSample4.jpg"),
-//    (shopID:"5",shopName:"たまごや とよまる 松尾店",shopAddress:"〒289-1501　千葉県山武市松尾町山室431-1", shopImage: "shopSample5.jpg"),
-//    (shopID:"6",shopName:"九十九里ファーム たまご屋さんコッコ",shopAddress:"〒289-2232 千葉県香取郡多古町多古町喜多413-44", shopImage: "shopSample6.jpg"),
-//    (shopID:"7",shopName:"たまごや食堂やませ",shopAddress:"栃木県佐野市吉水町211-1 石川たまごや内", shopImage: "shopSample7.jpg")
-//  ]
   var shopDataArray = [ShopData]()
   // 前画面(都道府県名一覧)から受け取った都道府県のデータ
   var prefData: PrefData!

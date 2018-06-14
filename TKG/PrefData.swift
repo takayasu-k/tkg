@@ -100,9 +100,9 @@ struct ShopData: Codable {
 
 // 店舗の詳細情報を受け取るための構造体
 struct ShopDetail: Codable {
-  var operatingHours: Int
-  var holiday: String
-  var payment: Int
+  var operatingHours: String?
+  var holiday: String?
+  var payment: String?
   
   private enum CodingKeys: String, CodingKey {
     case operatingHours = "operating_hours"
