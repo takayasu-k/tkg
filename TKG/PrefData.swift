@@ -38,56 +38,6 @@ struct ShopData: Codable {
     var url: String?
     var thumb: [String:String?]
   }
-  
-  
-//  var shops: [ShopData] = [ShopData]()
-  
-//  init(from decoder: Decoder) throws {
-//    // デコードのためのコンテナを取得
-//    let container = try decoder.container(keyedBy: CodingKeys.self)
-//    // コンテナ内のキーを取得。
-//    let keys = container.allKeys
-//    // キーを使用して検索結果を一件ずつ取り出す
-//    for key in keys {
-//      // 検索結果１件に対するデコード処理
-//      let shop = try container.decode(ShopData.self, forKey: key)
-//      // デコード処理できたら検索結果の一覧に追加
-//      shops.append(shop)
-//    }
-//  }
-//   エンコード処理
-//  func encode(to encoder: Encoder) throws {
-//    // レスポンスを解析するだけなので実装不要
-//  }
-  
-//  struct ShopImage: Codable {
-//    var url: String?
-//
-//    struct Thumb: Codable {
-//      var url: String?
-//    }
-//    var thumb: Thumb
-//
-//    init(from decoder: Decoder) throws {
-//      let container = try decoder.container(keyedBy: CodingKeys.self)
-//      // コンテナ内のキーを取得。
-//      let keys = container.allKeys
-//      // キーを使用して検索結果を一件ずつ取り出す
-//      for key in keys {
-//        // 検索結果１件に対するデコード処理
-//        let shopImage = try container.decode(ShopImage.self, forKey: key)
-//      }
-//    }
-    // エンコード処理
-//    func encode(to encoder: Encoder) throws {
-//      // レスポンスを解析するだけなので実装不要
-//    }
-//
-//    private enum CodingKeys: String, CodingKey {
-//      case url = "url"
-//      case thmub = "thumb"
-//    }
-//  }
 
   private enum CodingKeys: String, CodingKey {
     case shopID = "id"
@@ -116,7 +66,12 @@ struct MenuData: Codable {
   var menuID: Int
   var menuName: String
   var menuPrice: Int
-  var menuImage: String?
+  var menuImage: MenuImage
+  
+  struct MenuImage: Codable {
+    var url: String?
+    var thumb: [String:String?]
+  }
   
   private enum CodingKeys: String, CodingKey {
     case menuID = "id"

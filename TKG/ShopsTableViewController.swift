@@ -16,8 +16,6 @@ class ShopsTableViewController: UITableViewController {
   // 県に紐づく店舗一覧を取得するためのAPIのURL
   var shopsUrl = ""
   
-  var imageUrl: String? = "https://s3-ap-northeast-1.amazonaws.com/mmx-s3-bucket01/uploads/shop/prof_picture/4/E189D55A-125F-48B7-8F31-C58F6FE2A01B.jpeg"
-  
   var imageCache = NSCache<AnyObject, UIImage>()
 
     override func viewDidLoad() {

@@ -13,6 +13,7 @@
 		3B242D702099C7C800D87AC7 /* ShopsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B242D6F2099C7C800D87AC7 /* ShopsTableViewController.swift */; };
 		3B242D722099EEA300D87AC7 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B242D712099EEA300D87AC7 /* ShopViewController.swift */; };
 		3B88D58A2099F76D00717102 /* ShopNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B88D5892099F76D00717102 /* ShopNavigationController.swift */; };
+		3B9E481320D6306A00529581 /* SearchShopsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9E481220D6306A00529581 /* SearchShopsTableViewController.swift */; };
 		3BB74E28208B02760095B3A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB74E27208B02760095B3A5 /* AppDelegate.swift */; };
 		3BB74E2A208B02760095B3A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB74E29208B02760095B3A5 /* ViewController.swift */; };
 		3BB74E2D208B02760095B3A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BB74E2B208B02760095B3A5 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		3B242D6F2099C7C800D87AC7 /* ShopsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsTableViewController.swift; sourceTree = "<group>"; };
 		3B242D712099EEA300D87AC7 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		3B88D5892099F76D00717102 /* ShopNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopNavigationController.swift; sourceTree = "<group>"; };
+		3B9E481220D6306A00529581 /* SearchShopsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchShopsTableViewController.swift; sourceTree = "<group>"; };
 		3BB74E24208B02760095B3A5 /* TKG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BB74E27208B02760095B3A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BB74E29208B02760095B3A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				3BB74E27208B02760095B3A5 /* AppDelegate.swift */,
 				3BB74E29208B02760095B3A5 /* ViewController.swift */,
 				3BB74E2B208B02760095B3A5 /* Main.storyboard */,
+				3B9E481220D6306A00529581 /* SearchShopsTableViewController.swift */,
 				3BFF021320CCF8910032C1EE /* MenuDetailViewController.swift */,
 				3BFF021120C3C8FA0032C1EE /* HomeViewController.swift */,
 				3BFF020F20C3C0AB0032C1EE /* SettingsTableViewCell.swift */,
@@ -199,6 +202,7 @@
 				3BB9DF13209EEFA10067EC0A /* ShopMenusViewController.swift in Sources */,
 				3BB9DF11209EED9F0067EC0A /* ShopPageViewController.swift in Sources */,
 				3B88D58A2099F76D00717102 /* ShopNavigationController.swift in Sources */,
+				3B9E481320D6306A00529581 /* SearchShopsTableViewController.swift in Sources */,
 				3BFF021020C3C0AB0032C1EE /* SettingsTableViewCell.swift in Sources */,
 				3BB74E28208B02760095B3A5 /* AppDelegate.swift in Sources */,
 				3B242D6A2097312B00D87AC7 /* PrefTableViewCell.swift in Sources */,

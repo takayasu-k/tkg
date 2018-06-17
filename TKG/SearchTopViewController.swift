@@ -9,26 +9,49 @@
 import UIKit
 
 
-class SearchTopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SearchTopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
   @IBOutlet weak var prefTableView: UITableView!
   @IBOutlet weak var searchBar: UISearchBar!
   
   // 店舗のある都道府県一覧と店舗数を返すURL
   let prefUrl = "http://menumeal.jp/pref_shops/search"
+  var searchText = ""
   
   // テーブルビューに表示するための都道府県名の情報
   var prefDataArray = [PrefData]()
   
   override func viewDidLoad() {
         super.viewDidLoad()
-
+    
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         prefTableView.delegate = self
         prefTableView.dataSource = self
+        searchBar.delegate = self
   }
   
   override func viewDidAppear(_ animated: Bool) {
     self.navigationController?.setNavigationBarHidden(true, animated: false)
+  }
+  
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    // 入力された文字の取り出し
+    guard let inputText = searchBar.text else {
+      searchBar.resignFirstResponder()
+      // 入力された文字がない場合
+      return
+    }
+    
+    // 文字数が０文字より多いかチェックする
+    guard inputText.lengthOfBytes(using: String.Encoding.utf8) > 0 else {
+      searchBar.resignFirstResponder()
+      // 0文字以下の場合
+      return
+    }
+    
+    searchText = inputText
+    searchBar.resignFirstResponder()
+    self.performSegue(withIdentifier: "showSearchShops", sender: inputText)
   }
   
   // 画面が表示される直前に毎回行われる↓
@@ -124,6 +147,8 @@ class SearchTopViewController: UIViewController, UITableViewDelegate, UITableVie
         (segue.destination as! ShopsTableViewController).prefData = prefData
         (segue.destination as! ShopsTableViewController).shopsUrl = "http://menumeal.jp/pref_shops/\(String(prefData.prefID))/shops/search"
       }
+    } else if segue.identifier == "showSearchShops" {
+      (segue.destination as! SearchShopsTableViewController).searchText = searchText
     }
   }
   

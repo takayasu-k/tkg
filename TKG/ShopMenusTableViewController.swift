@@ -65,19 +65,18 @@ class ShopMenusTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "shopMenuCell", for: indexPath) as! ShopMenusTableViewCell
         let menuData = menuDataArray[(indexPath as NSIndexPath).row]
-//        cell.menuImageView.image = UIImage(named: menuData.menuImage)
         cell.menuNameLabel.text = menuData.menuName
         cell.menuPriceLabel.text = String(menuData.menuPrice)
       
-      let menuImageUrl = menuData.menuImage
+      let thumbUrl = menuData.menuImage.thumb["url"]
       // 仮の画像表示のための処理
-      guard let menuImage = menuImageUrl  else {
+      guard let thumb = thumbUrl!  else {
         // 画像なしの場合
         return cell
       }
       
       // キャッシュ画像があればキャッシュの画像を取り出す
-      if let cacheImage = imageCache.object(forKey: menuImage as AnyObject) {
+      if let cacheImage = imageCache.object(forKey: thumb as AnyObject) {
         // キャッシュ画像の設定
         cell.menuImageView.image = cacheImage
         return cell
@@ -85,7 +84,7 @@ class ShopMenusTableViewController: UITableViewController {
       
       // 画像をダウンロードする
       
-      guard let url = URL(string: menuImage) else {
+      guard let url = URL(string: thumb) else {
         // urlが生成できなかった
         return cell
       }
@@ -105,7 +104,7 @@ class ShopMenusTableViewController: UITableViewController {
           return
         }
         // ダウンロードした画像をキャッシュに登録しておく
-        self.imageCache.setObject(image, forKey: menuImage as AnyObject)
+        self.imageCache.setObject(image, forKey: thumb as AnyObject)
         // 画像はメインスレッド上で処理する
         DispatchQueue.main.async {
           cell.menuImageView.image = image
