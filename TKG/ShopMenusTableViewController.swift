@@ -69,23 +69,22 @@ class ShopMenusTableViewController: UITableViewController {
         cell.menuPriceLabel.text = String(menuData.menuPrice)
       
       let thumbUrl = menuData.menuImage.thumb["url"]
-      // 仮の画像表示のための処理
+      // サムネイル
       guard let thumb = thumbUrl!  else {
         // 画像なしの場合
         return cell
       }
       
-      // キャッシュ画像があればキャッシュの画像を取り出す
+      // キャッシュサムネイル画像があればキャッシュの画像を取り出す
       if let cacheImage = imageCache.object(forKey: thumb as AnyObject) {
         // キャッシュ画像の設定
         cell.menuImageView.image = cacheImage
         return cell
       }
       
-      // 画像をダウンロードする
-      
+      // サムネイルをダウンロードする
       guard let url = URL(string: thumb) else {
-        // urlが生成できなかった
+        // サムネurlが生成できなかった
         return cell
       }
       let request = URLRequest(url: url)
@@ -103,14 +102,14 @@ class ShopMenusTableViewController: UITableViewController {
           // imageが生成できなかった
           return
         }
-        // ダウンロードした画像をキャッシュに登録しておく
+        // ダウンロードしたサムネ画像をキャッシュに登録しておく
         self.imageCache.setObject(image, forKey: thumb as AnyObject)
         // 画像はメインスレッド上で処理する
         DispatchQueue.main.async {
           cell.menuImageView.image = image
         }
       }
-      // 画像の読み込み開始
+      // サムネの読み込み開始
       task.resume()
       
       
@@ -177,7 +176,6 @@ class ShopMenusTableViewController: UITableViewController {
         let menuData = menuDataArray[(indexPath).row]
         // 移動先ビューコントローラのprefDataプロパティに値を設定する
         (segue.destination as! MenuDetailViewController).menuData = menuData
-        (segue.destination as! MenuDetailViewController).menuImage = imageCache.object(forKey: menuData.menuImage as AnyObject)
       }
     }
   }
@@ -185,49 +183,6 @@ class ShopMenusTableViewController: UITableViewController {
   
 
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
