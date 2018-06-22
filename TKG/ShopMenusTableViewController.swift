@@ -10,28 +10,11 @@ import UIKit
 
 class ShopMenusTableViewController: UITableViewController {
   
-  // APIの実装ができるまでの仮データ
-  // 実装後は削除する
-//  let menuDataArray =  [
-//    (menuID:"1",menuName:"みつせ鶏串",menuPrice:"400",menuImage:"menu1.jpg"),
-//    (menuID:"2",menuName:"博多明太子の玉子焼き",menuPrice:"1100",menuImage:"menu2.jpg"),
-//    (menuID:"3",menuName:"大分 別府湾 釜揚げしらすの玉子焼き",menuPrice:"1050",menuImage:"menu3.jpg"),
-//    (menuID:"4",menuName:"黒豚のスペアリブ",menuPrice:"1000",menuImage:"menu4.jpg"),
-//    (menuID:"5",menuName:"佐賀 唐津 川島豆腐店の胡麻豆腐",menuPrice:"500",menuImage:"menu5.jpg"),
-//    (menuID:"6",menuName:"鹿児島 黒豚ばら肉しゃぶしゃぶ鍋",menuPrice:"3600",menuImage:"menu6.jpg"),
-//    (menuID:"7",menuName:"うまや特製 杏仁豆腐",menuPrice:"620",menuImage:"menu7.jpg"),
-//    (menuID:"8",menuName:"もち豚の炭火焼きとろろ定食",menuPrice:"1300",menuImage:"menu8.jpg"),
-//    (menuID:"9",menuName:"麓鶏のチキンカツ定食",menuPrice:"1250",menuImage:"menu9.jpg"),
-//    (menuID:"10",menuName:"佐賀 シシリアンライス",menuPrice:"1150",menuImage:"menu10.jpg"),
-//    ]
    var menuDataArray = [MenuData]()
    var imageCache = NSCache<AnyObject, UIImage>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
