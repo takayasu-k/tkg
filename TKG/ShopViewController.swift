@@ -86,6 +86,7 @@ class ShopViewController: UIViewController {
     }
     
   }
+  
   @IBAction func showShopMenuTapped(_ sender: Any) {
     let childVC = self.childViewControllers[0] as! ShopPageViewController
     if childVC.childViewControllers[0].isKind(of: ShopInfoTableViewController.self) {
@@ -96,12 +97,12 @@ class ShopViewController: UIViewController {
   }
   
   func setShopInfoButtonColor() {
-    showShopInfoButton.setTitleColor(UIColor.orange, for: .normal)
+    showShopInfoButton.setTitleColor(UIColor.rgba(red: 254, green: 199, blue: 46, alpha: 1), for: .normal)
     showShopMenuButton.setTitleColor(UIColor.lightGray, for: .normal)
   }
   func setShopMenusButtonColor() {
     showShopInfoButton.setTitleColor(UIColor.lightGray, for: .normal)
-    showShopMenuButton.setTitleColor(UIColor.orange , for: .normal)
+    showShopMenuButton.setTitleColor(UIColor.rgba(red: 254, green: 199, blue: 46, alpha: 1) , for: .normal)
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
