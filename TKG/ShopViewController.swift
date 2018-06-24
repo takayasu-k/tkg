@@ -101,7 +101,7 @@ class ShopViewController: UIViewController {
   }
   func setShopMenusButtonColor() {
     showShopInfoButton.setTitleColor(UIColor.lightGray, for: .normal)
-    showShopMenuButton.setTitleColor(UIColor.orange, for: .normal)
+    showShopMenuButton.setTitleColor(UIColor.orange , for: .normal)
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -111,14 +111,6 @@ class ShopViewController: UIViewController {
         (segue.destination as! ShopPageViewController).shopData = shopData
     }
   }
-    /*
-   // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

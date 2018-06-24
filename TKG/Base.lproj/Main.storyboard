@@ -52,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eVd-4D-cbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-425.625" y="22.183098591549296"/>
+            <point key="canvasLocation" x="-381" y="355"/>
         </scene>
         <!--Search Shops Table View Controller-->
         <scene sceneID="gX5-94-chL">
@@ -136,7 +136,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T94-gx-UKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1472" y="607"/>
+            <point key="canvasLocation" x="1541" y="657"/>
         </scene>
         <!--東京-->
         <scene sceneID="7SR-27-dZL">
@@ -313,7 +313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGx-Q3-Jfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2411" y="1305"/>
+            <point key="canvasLocation" x="2409" y="1269"/>
         </scene>
         <!--Shop Page View Controller-->
         <scene sceneID="jgk-ic-365">
