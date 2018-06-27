@@ -15,11 +15,15 @@ class ShopViewController: UIViewController {
   var imageCache = NSCache<AnyObject, UIImage>()
   // 前画面から受け取った店舗の基本情報
   var shopData: ShopData!
+  
 
   @IBOutlet weak var shopImageView: UIImageView! // 店舗トップ画像imageView
   @IBOutlet weak var shopNameTitle: UINavigationItem! // navigationItem店舗名
   @IBOutlet weak var showShopInfoButton: UIButton!
   @IBOutlet weak var showShopMenuButton: UIButton!
+  @IBOutlet weak var containerView: UIView!
+  @IBOutlet weak var scrollView: UIScrollView!
+  @IBOutlet weak var scrollContentView: UIView!
   
   override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +76,12 @@ class ShopViewController: UIViewController {
     task.resume()
     
     }
+  
+  override func viewDidLayoutSubviews() {
+//    let contentRect = self.view.frame
+//    scrollContentView.bounds = CGRect(x: 0, y: 0, width: contentRect.width, height: contentRect.height+350.0)
+//    scrollView.contentSize =  CGSize(width: scrollContentView.bounds.width, height: 6000.0)
+  }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

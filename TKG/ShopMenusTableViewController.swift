@@ -12,6 +12,9 @@ class ShopMenusTableViewController: UITableViewController {
   
    var menuDataArray = [MenuData]()
    var imageCache = NSCache<AnyObject, UIImage>()
+   var height:CGFloat = 0
+   var VCSize: CGSize = CGSize(width: 0, height: 0)
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,14 @@ class ShopMenusTableViewController: UITableViewController {
       
       request(requestUrl: menuUrl)
     }
+  
+  override func viewWillLayoutSubviews() {
+    self.VCSize = self.view.bounds.size
+    let shopVC = self.parent?.parent as! ShopViewController
+    shopVC.containerView.frame.size = VCSize
+    shopVC.scrollView.contentSize = CGSize(width: VCSize.width, height: VCSize.height+350)
+    shopVC.scrollContentView.frame.size = CGSize(width: VCSize.width, height: VCSize.height+350)
+  }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

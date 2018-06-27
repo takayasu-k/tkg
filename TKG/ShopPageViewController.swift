@@ -25,6 +25,16 @@ class ShopPageViewController: UIPageViewController {
     
     return storyboard!.instantiateViewController(withIdentifier: "ShopInfoTableViewController") as!ShopInfoTableViewController
   }
+  
+//  func getShopInfoBounds() -> CGRect {
+//    let shopInfoTableView = storyboard!.instantiateViewController(withIdentifier: "ShopInfoTableViewController") as!ShopInfoTableViewController
+//    return shopInfoTableView.view.bounds
+//  }
+//  func getShopMenusBounds() -> CGRect {
+//    let shopMenusTableView = storyboard!.instantiateViewController(withIdentifier: "ShopMenusTableViewController") as!ShopMenusTableViewController
+//    return shopMenusTableView.view.bounds
+//  }
+  
   func getShopMenusTable() -> ShopMenusTableViewController {
     
     return storyboard!.instantiateViewController(withIdentifier: "ShopMenusTableViewController") as! ShopMenusTableViewController
@@ -55,6 +65,8 @@ extension ShopPageViewController : UIPageViewControllerDataSource {
       
       let parentVC = self.parent! as! ShopViewController
       parentVC.setShopInfoButtonColor()
+//      let shopInfoBounds = getShopInfoBounds()
+//      parentVC.view.frame = CGRect(x: 0, y: 0, width: shopInfoBounds.width, height: shopInfoBounds.height)
       return getShopInfo()
     } else {
       //  -> end of the road
@@ -67,6 +79,8 @@ extension ShopPageViewController : UIPageViewControllerDataSource {
       // ShopInfoTable -> ShopMenus
       let parentVC = self.parent! as! ShopViewController
       parentVC.setShopMenusButtonColor()
+//      let shopMenusBounds = getShopMenusBounds()
+//      parentVC.view.frame = CGRect(x: 0, y: 0, width: shopMenusBounds.width, height: shopMenusBounds.height)
       return getShopMenusTable()
     } else {
       //  -> end of the road

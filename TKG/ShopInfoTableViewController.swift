@@ -18,15 +18,11 @@ class ShopInfoTableViewController: UITableViewController {
     ("定休日",""),
     ("支払い方法","")
   ]
+  var VCSize:CGSize = CGSize(width: 0, height: 0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.tableView.isScrollEnabled = false
         let shopView = self.parent as! ShopPageViewController
         let shopData = shopView.shopData
@@ -41,6 +37,12 @@ class ShopInfoTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+  
+    override func viewWillLayoutSubviews() {
+      self.VCSize = self.view.frame.size
+      let shopVC = self.parent?.parent as! ShopViewController
+      shopVC.scrollView.contentSize = CGSize(width: VCSize.width, height: VCSize.height)
     }
 
     // MARK: - Table view data source
@@ -100,7 +102,6 @@ class ShopInfoTableViewController: UITableViewController {
         let shopDetail =
           try JSONDecoder().decode(ShopDetail.self, from: data)
         // 県名のリストに追加
-//        self.prefDataArray.append(contentsOf: prefData)
         if let operagingHours = shopDetail.operatingHours {
           self.shopInfo[2].value = operagingHours
         } else {
