@@ -10,19 +10,18 @@ import UIKit
 
 class ShopMenusTableViewController: UITableViewController {
   
-   var menuDataArray = [MenuData]()
+   var menuDataArray = [MenuData]() // MenuData型の配列
    var imageCache = NSCache<AnyObject, UIImage>()
-   var height:CGFloat = 0
-   var VCSize: CGSize = CGSize(width: 0, height: 0)
-
+   // 前画面から受け取った店舗の基本情報
+   var shopData: ShopData!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-      let shopView = parent as! ShopPageViewController
-      guard let shopData = shopView.shopData else {
+      
+      guard let shopData = shopData else {
         return
       }
       let menuUrl = "http://menumeal.jp/shops/\(shopData.shopID)/menus"
@@ -30,13 +29,6 @@ class ShopMenusTableViewController: UITableViewController {
       request(requestUrl: menuUrl)
     }
   
-  override func viewWillLayoutSubviews() {
-    self.VCSize = self.view.bounds.size
-    let shopVC = self.parent?.parent as! ShopViewController
-    shopVC.containerView.frame.size = VCSize
-    shopVC.scrollView.contentSize = CGSize(width: VCSize.width, height: VCSize.height+350)
-    shopVC.scrollContentView.frame.size = CGSize(width: VCSize.width, height: VCSize.height+350)
-  }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

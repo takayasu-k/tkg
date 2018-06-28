@@ -163,13 +163,13 @@ class ShopsTableViewController: UITableViewController {
   // セグエで移動する前にデータを受け渡す
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     // セグエがshowShop(店舗詳細画面を表示する)のときに処理
-    if segue.identifier == "showShop" {
+    if segue.identifier == "showShopTop" {
       // タップした行番号を取り出す
       if let indexPath = self.tableView.indexPathForSelectedRow {
         // 行のデータを取り出す
         let shopData = shopDataArray[(indexPath).row]
 //         移動先のビューコントローラのshopDataプロパティに値を設定する
-        (segue.destination as! ShopViewController).shopData = shopData
+        (segue.destination as! ShopTopViewController).shopData = shopData
       }
     }
   }
