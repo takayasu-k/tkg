@@ -21,10 +21,15 @@ class ShopMenusTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+  override func setSelected(_ selected: Bool, animated: Bool) {
+      super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
-    }
+      // Configure the view for the selected state
+  }
+  
+  override func prepareForReuse() {
+    // 元々入っている情報を再利用時にクリア
+    menuImageView.image = nil
+  }
 
 }

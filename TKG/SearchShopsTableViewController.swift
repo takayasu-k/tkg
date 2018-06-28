@@ -184,6 +184,7 @@ class SearchShopsTableViewController: UITableViewController, UISearchBarDelegate
     // 仮の画像表示のための処理
     guard let thumb = thumbUrl!  else {
       // 画像なしの場合
+      cell.shopImageView.image = UIImage(named: "noImageThumb.png")
       return cell
     }
     

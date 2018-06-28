@@ -58,6 +58,7 @@ class ShopMenusTableViewController: UITableViewController {
       // サムネイル
       guard let thumb = thumbUrl!  else {
         // 画像なしの場合
+        cell.menuImageView.image = UIImage(named: "noImageThumb.png")
         return cell
       }
       
@@ -98,7 +99,6 @@ class ShopMenusTableViewController: UITableViewController {
       // サムネの読み込み開始
       task.resume()
       
-      
       return cell
     }
   
@@ -138,7 +138,7 @@ class ShopMenusTableViewController: UITableViewController {
         // パース実施
         let menuData =
           try JSONDecoder().decode([MenuData].self, from: data)
-        // 県名のリストに追加
+        // メニューのリストに追加
         self.menuDataArray.append(contentsOf: menuData)
       } catch let error {
         print("## error: \(error)")

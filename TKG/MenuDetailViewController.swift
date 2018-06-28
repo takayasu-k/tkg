@@ -32,6 +32,7 @@ class MenuDetailViewController: UIViewController {
     // オリジナル画像
     guard let original = originalUrl else {
       // 画像なしの場合
+      menuImageView.image = UIImage(named: "noimage.png")
       return
     }
     

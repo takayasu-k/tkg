@@ -66,6 +66,7 @@ class ShopTopViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         guard let data = data else {
           // データが存在しない
+          self.shopImageView.image = UIImage(named: "noimage.png")
           return
         }
         guard let image = UIImage(data: data) else {
