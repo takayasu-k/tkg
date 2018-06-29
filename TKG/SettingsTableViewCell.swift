@@ -11,6 +11,8 @@ import UIKit
 class SettingsTableViewCell: UITableViewCell {
 
   @IBOutlet weak var settingsContentLabel: UILabel!
+  @IBOutlet weak var contentLabel: UILabel!
+  
   override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
