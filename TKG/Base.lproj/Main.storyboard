@@ -514,13 +514,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="632"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bia-pq-ohF">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="210" id="0fR-Se-Buq"/>
+                                                    <constraint firstAttribute="height" constant="250" id="0fR-Se-Buq"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6y-QY-wIY" customClass="Button_Custom" customModule="TKG" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="220" width="300" height="50"/>
+                                                <rect key="frame" x="10" y="260" width="300" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="zMn-91-doT"/>
                                                 </constraints>
@@ -544,7 +544,7 @@
                                                 </connections>
                                             </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JHf-eb-LUs">
-                                                <rect key="frame" x="0.0" y="280" width="320" height="352"/>
+                                                <rect key="frame" x="0.0" y="320" width="320" height="312"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <view key="tableFooterView" contentMode="scaleToFill" id="hPV-2o-xTV">
                                                     <rect key="frame" x="0.0" y="78" width="320" height="128"/>
