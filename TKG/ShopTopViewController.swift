@@ -90,7 +90,8 @@ class ShopTopViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
   override func viewDidLayoutSubviews() {
     let contentSize = scrollContentView.bounds.size
-    scrollView.contentSize = CGSize(width: contentSize.width, height: contentSize.height+30)
+    scrollView.contentSize = CGSize(width: contentSize.width, height: contentSize.height+60)
+    
   }
 
     override func didReceiveMemoryWarning() {
