@@ -513,7 +513,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DR4-Ne-bcs">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="632"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bia-pq-ohF">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bia-pq-ohF">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="210" id="0fR-Se-Buq"/>
