@@ -184,7 +184,7 @@ class ShopTopViewController: UIViewController, UITableViewDelegate, UITableViewD
     // セグエがshowShopMenus(店舗メニューを表示する)のときに処理
     if segue.identifier == "showShopMenus" {
         //         移動先のビューコントローラのshopDataプロパティに値を設定する
-        (segue.destination as! ShopMenusTableViewController).shopData = shopData
+        (segue.destination as! ShopMenusViewController).shopData = shopData
     }
   }
     

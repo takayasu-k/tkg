@@ -28,6 +28,7 @@
 		3BD3AEE920E50A2D0066732F /* ButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD3AEE820E50A2D0066732F /* ButtonCustom.swift */; };
 		3BD3AEEB20E50B4D0066732F /* ShopTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD3AEEA20E50B4D0066732F /* ShopTopViewController.swift */; };
 		3BD3AEED20E65FFB0066732F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD3AEEC20E65FFB0066732F /* WebViewController.swift */; };
+		3BD475CA20EB78B500E42613 /* ShopMenusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD475C920EB78B500E42613 /* ShopMenusCollectionViewCell.swift */; };
 		3BFF021020C3C0AB0032C1EE /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFF020F20C3C0AB0032C1EE /* SettingsTableViewCell.swift */; };
 		3BFF021220C3C8FA0032C1EE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFF021120C3C8FA0032C1EE /* HomeViewController.swift */; };
 		3BFF021420CCF8910032C1EE /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFF021320CCF8910032C1EE /* MenuDetailViewController.swift */; };
@@ -57,6 +58,7 @@
 		3BD3AEE820E50A2D0066732F /* ButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustom.swift; sourceTree = "<group>"; };
 		3BD3AEEA20E50B4D0066732F /* ShopTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTopViewController.swift; sourceTree = "<group>"; };
 		3BD3AEEC20E65FFB0066732F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		3BD475C920EB78B500E42613 /* ShopMenusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopMenusCollectionViewCell.swift; sourceTree = "<group>"; };
 		3BFF020F20C3C0AB0032C1EE /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		3BFF021120C3C8FA0032C1EE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3BFF021320CCF8910032C1EE /* MenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				3BB74E27208B02760095B3A5 /* AppDelegate.swift */,
 				3BB74E29208B02760095B3A5 /* ViewController.swift */,
 				3BB74E2B208B02760095B3A5 /* Main.storyboard */,
+				3BD475C920EB78B500E42613 /* ShopMenusCollectionViewCell.swift */,
 				3BD3AEEC20E65FFB0066732F /* WebViewController.swift */,
 				3BD3AEEA20E50B4D0066732F /* ShopTopViewController.swift */,
 				3B9E481820DF869300529581 /* UIColorRGB.swift */,
@@ -205,6 +208,7 @@
 				3BB9DF13209EEFA10067EC0A /* ShopMenusViewController.swift in Sources */,
 				3B88D58A2099F76D00717102 /* ShopNavigationController.swift in Sources */,
 				3BD3AEEB20E50B4D0066732F /* ShopTopViewController.swift in Sources */,
+				3BD475CA20EB78B500E42613 /* ShopMenusCollectionViewCell.swift in Sources */,
 				3B9E481320D6306A00529581 /* SearchShopsTableViewController.swift in Sources */,
 				3BFF021020C3C0AB0032C1EE /* SettingsTableViewCell.swift in Sources */,
 				3BB74E28208B02760095B3A5 /* AppDelegate.swift in Sources */,
