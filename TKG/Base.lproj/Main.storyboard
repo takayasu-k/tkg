@@ -299,11 +299,11 @@
                     <navigationItem key="navigationItem" id="Q1b-SY-qIW">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="r1L-Ht-ci1">
-                            <rect key="frame" x="99.5" y="7.5" width="121" height="29"/>
+                            <rect key="frame" x="99.5" y="7" width="121" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="First"/>
-                                <segment title="Second"/>
+                                <segment title="" image="List_icon"/>
+                                <segment title="" image="Grid_icon"/>
                             </segments>
                             <connections>
                                 <action selector="changeLayout:" destination="VaP-T1-H1c" eventType="valueChanged" id="FJM-SQ-GyL"/>
@@ -943,6 +943,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Grid_icon" width="22" height="22"/>
+        <image name="List_icon" width="22" height="20"/>
         <image name="homeButtonIcon" width="25" height="25"/>
         <image name="tkg" width="640" height="400"/>
     </resources>
