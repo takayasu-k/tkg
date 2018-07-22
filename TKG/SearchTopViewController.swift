@@ -30,6 +30,8 @@ class SearchTopViewController: UIViewController, UITableViewDelegate, UITableVie
         searchBar.delegate = self
   }
   
+
+  
   override func viewDidAppear(_ animated: Bool) {
     self.navigationController?.setNavigationBarHidden(true, animated: false)
   }

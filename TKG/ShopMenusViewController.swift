@@ -21,6 +21,8 @@ class ShopMenusViewController: UIViewController, UITableViewDelegate, UITableVie
   @IBOutlet weak var shopMenusTableView: UITableView!
   @IBOutlet weak var shopMenusCollectionView: UICollectionView!
   
+  var Indicator: UIActivityIndicatorView!
+  
   var menuDataArray = [MenuData]() // MenuData型の配列
   var imageCache = NSCache<AnyObject, UIImage>()
   // 前画面から受け取った店舗の基本情報
@@ -33,7 +35,6 @@ class ShopMenusViewController: UIViewController, UITableViewDelegate, UITableVie
         shopMenusTableView.dataSource = self
         shopMenusCollectionView.delegate = self
         shopMenusCollectionView.dataSource = self
-      
       
       
       
@@ -69,10 +70,7 @@ class ShopMenusViewController: UIViewController, UITableViewDelegate, UITableVie
       addListView()
     }
   }
-  override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
   
   func numberOfSections(in tableView: UITableView) -> Int {
     return 1
@@ -137,7 +135,7 @@ class ShopMenusViewController: UIViewController, UITableViewDelegate, UITableVie
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let horizontalSpace:CGFloat = 2
+    let horizontalSpace:CGFloat = 1
     let cellsize:CGFloat = self.view.bounds.width/3 - horizontalSpace
     return CGSize(width: cellsize, height: cellsize)
   }
@@ -203,11 +201,15 @@ class ShopMenusViewController: UIViewController, UITableViewDelegate, UITableVie
   
   // リクエストを行ってメニューのJSONデータを構造体として受け取り画面に表示するメソッド
   func request(requestUrl: String) {
+
+    
     // URL生成
     guard let url = URL(string: requestUrl) else {
       // URL生成失敗
       return
     }
+    
+    
     // リクエスト生成
     let request = URLRequest(url: url)
     
