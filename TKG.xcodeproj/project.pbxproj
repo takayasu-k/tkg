@@ -17,6 +17,8 @@
 		3BAD8C33210D7970004E5A26 /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAD8C32210D7970004E5A26 /* MenuDetailViewController.swift */; };
 		3BAD8C35210D80FD004E5A26 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAD8C34210D80FD004E5A26 /* ReviewTableViewCell.swift */; };
 		3BAD8C37210DB6C2004E5A26 /* ReviewFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAD8C36210DB6C2004E5A26 /* ReviewFormViewController.swift */; };
+		3BAD8C392111F925004E5A26 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAD8C382111F925004E5A26 /* SignUpViewController.swift */; };
+		3BAD8C3B2112041E004E5A26 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAD8C3A2112041E004E5A26 /* LogInViewController.swift */; };
 		3BB74E28208B02760095B3A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB74E27208B02760095B3A5 /* AppDelegate.swift */; };
 		3BB74E2A208B02760095B3A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB74E29208B02760095B3A5 /* ViewController.swift */; };
 		3BB74E2D208B02760095B3A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BB74E2B208B02760095B3A5 /* Main.storyboard */; };
@@ -47,6 +49,8 @@
 		3BAD8C32210D7970004E5A26 /* MenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
 		3BAD8C34210D80FD004E5A26 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		3BAD8C36210DB6C2004E5A26 /* ReviewFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFormViewController.swift; sourceTree = "<group>"; };
+		3BAD8C382111F925004E5A26 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3BAD8C3A2112041E004E5A26 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		3BB74E24208B02760095B3A5 /* TKG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BB74E27208B02760095B3A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BB74E29208B02760095B3A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				3BB74E27208B02760095B3A5 /* AppDelegate.swift */,
 				3BB74E29208B02760095B3A5 /* ViewController.swift */,
 				3BB74E2B208B02760095B3A5 /* Main.storyboard */,
+				3BAD8C3A2112041E004E5A26 /* LogInViewController.swift */,
+				3BAD8C382111F925004E5A26 /* SignUpViewController.swift */,
 				3BAD8C36210DB6C2004E5A26 /* ReviewFormViewController.swift */,
 				3BAD8C34210D80FD004E5A26 /* ReviewTableViewCell.swift */,
 				3BD475C920EB78B500E42613 /* ShopMenusCollectionViewCell.swift */,
@@ -205,7 +211,9 @@
 				3BB9DF1920A2CCD50067EC0A /* PrefData.swift in Sources */,
 				3B9E481920DF869300529581 /* UIColorRGB.swift in Sources */,
 				3BD3AEED20E65FFB0066732F /* WebViewController.swift in Sources */,
+				3BAD8C392111F925004E5A26 /* SignUpViewController.swift in Sources */,
 				3BB9DF4520A6CEEE0067EC0A /* ShopMenusTableViewCell.swift in Sources */,
+				3BAD8C3B2112041E004E5A26 /* LogInViewController.swift in Sources */,
 				3B242D6620972D1B00D87AC7 /* SearchTopViewController.swift in Sources */,
 				3BFF021220C3C8FA0032C1EE /* HomeViewController.swift in Sources */,
 				3B242D702099C7C800D87AC7 /* ShopsTableViewController.swift in Sources */,
