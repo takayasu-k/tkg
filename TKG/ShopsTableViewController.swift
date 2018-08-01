@@ -21,11 +21,6 @@ class ShopsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.navigationItem.title = prefData.prefName
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         self.navigationController?.setNavigationBarHidden(false, animated: true)
@@ -33,9 +28,6 @@ class ShopsTableViewController: UITableViewController {
     }
   
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
   
   // リクエストを行ってJSONを構造体として受け取り画面に表示するメソッド
   func request(requestUrl: String) {

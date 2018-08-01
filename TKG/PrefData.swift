@@ -80,3 +80,21 @@ struct MenuData: Codable {
     case menuImage = "prof_picture"
   }
 }
+
+// メニューごとのレビューを受け取るための構造体
+struct ReviewData: Codable {
+  var content: String
+  var updatedAt: String
+  var reviewID: Int
+  var userName: String
+  
+  
+  
+  private enum CodingKeys: String, CodingKey {
+    case content = "content"
+    case updatedAt = "updated_at"
+    case reviewID = "review_id"
+    case userName = "user_name"
+    
+  }
+}

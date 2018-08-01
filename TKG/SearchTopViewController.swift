@@ -64,10 +64,7 @@ class SearchTopViewController: UIViewController, UITableViewDelegate, UITableVie
     request(requestUrl: prefUrl)
   }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
   
   // リクエストを行ってJSONを構造体として受け取り画面に表示するメソッド
   func request(requestUrl: String) {
