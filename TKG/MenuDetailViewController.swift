@@ -83,7 +83,7 @@ class MenuDetailViewController: UIViewController, UITableViewDelegate, UITableVi
       task.resume()
       
       
-      
+      print(menuData)
 
     }
   

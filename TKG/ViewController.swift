@@ -21,6 +21,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     settingsTableView.delegate = self
     settingsTableView.dataSource = self
+    // userDefaultsにログイン情報があればその名前を表示する
+    let userDefaults = UserDefaults.standard
+    if let userName = userDefaults.string(forKey: "userName") {
+      self.navigationItem.title = userName
+    } else {
+    self.navigationItem.title = "ゲスト"
+    }
   }
 
   override func didReceiveMemoryWarning() {

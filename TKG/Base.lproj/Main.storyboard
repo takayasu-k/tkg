@@ -545,7 +545,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FCo-zg-Xy2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3613" y="2460"/>
+            <point key="canvasLocation" x="-3330" y="300"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="EgF-w7-xwO">
@@ -654,11 +654,12 @@
                         <outlet property="emailTextField" destination="5qP-qK-FyM" id="rAF-5K-1vh"/>
                         <outlet property="passwordTextField" destination="dpB-l3-GQT" id="SZZ-PF-QZ3"/>
                         <segue destination="J5j-mg-d3i" kind="presentation" identifier="toSignUp" animates="NO" id="d8g-Om-P8d"/>
+                        <segue destination="PSK-c1-Z6n" kind="show" identifier="toHomeView" animates="NO" id="wgS-fg-CdB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lr0-Sk-Dra" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4490.625" y="2436.9718309859154"/>
+            <point key="canvasLocation" x="-2387" y="300"/>
         </scene>
         <!--Menu Detail View Controller-->
         <scene sceneID="v3G-oi-cBY">
