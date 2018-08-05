@@ -126,5 +126,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
       (segue.destination as! LogInViewController).userName = self.userName
     }
   }
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    // キーボードを閉じる
+    textField.resignFirstResponder()
+    return true
+  }
 
 }

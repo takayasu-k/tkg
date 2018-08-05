@@ -27,7 +27,7 @@ class MenuDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
       
-      self.reviewsURL = "http://menumeal.jp/menus/1/reviews"
+      self.reviewsURL = "http://menumeal.jp/menus/\(String(menuData.menuID))/reviews"
       print(reviewsURL)
       
       reviewsTableView.delegate = self
@@ -186,6 +186,11 @@ class MenuDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     performSegue(withIdentifier: "showReviewForm", sender: nil)
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "showReviewForm" {
+      (segue.destination as! ReviewFormViewController).menuData = self.menuData
+    }
+  }
 
 
 

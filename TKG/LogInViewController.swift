@@ -34,9 +34,9 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     request.httpMethod = "POST"
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-    request.addValue("access-token", forHTTPHeaderField: token)
-    request.addValue("client", forHTTPHeaderField: client)
-    request.addValue("uid", forHTTPHeaderField: uid)
+    request.addValue(self.token, forHTTPHeaderField: "access-token")
+    request.addValue(self.client, forHTTPHeaderField: "client")
+    request.addValue(self.uid, forHTTPHeaderField: "uid")
     
     guard let email = emailTextField.text else {
       print("emailの入力なし")
@@ -79,6 +79,18 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         self.client = client
         self.uid = uid
         
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(self.token, forKey: "access-token")
+        userDefaults.set(self.client, forKey: "client")
+        userDefaults.set(self.uid, forKey: "uid")
+        userDefaults.set(self.userName, forKey: "userName")
+        userDefaults.synchronize()
+        
+        print("ユーザーデフォルト上でのアクセストークンは：\(userDefaults.string(forKey: "access-token"))")
+        print("ユーザーデフォルト上でのクライアントは：\(userDefaults.string(forKey: "client"))")
+        print("ユーザーデフォルト上でのUIDは：\(userDefaults.string(forKey: "uid"))")
+        
+        
         self.statusCode = response.statusCode
         print("ステータスコードは\(self.statusCode)")
         // ここで返却結果から必要な情報をとりだす？
@@ -97,6 +109,12 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     performSegue(withIdentifier: "toSignUp", sender: nil)
   }
   
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    // キーボードを閉じる
+    textField.resignFirstResponder()
+    return true
+  }
+  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "toHomeView" {
       let userDefaults = UserDefaults.standard
@@ -104,6 +122,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
       userDefaults.set(self.client, forKey: "client")
       userDefaults.set(self.uid, forKey: "uid")
       userDefaults.set(self.userName, forKey: "userName")
+      userDefaults.synchronize()
     }
   }
 

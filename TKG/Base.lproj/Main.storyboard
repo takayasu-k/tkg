@@ -865,7 +865,7 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ここにレビューを記入する。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vp5-lF-iif">
                                 <rect key="frame" x="16" y="139" width="288" height="259"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
@@ -876,6 +876,7 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2Q-O7-jh0" customClass="Button_Custom" customModule="TKG" customModuleProvider="target">
                                 <rect key="frame" x="16" y="458" width="288" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="h5q-Qf-GBS"/>
                                 </constraints>
@@ -912,7 +913,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="X2Q-O7-jh0" firstAttribute="leading" secondItem="dPE-n0-Rwz" secondAttribute="leading" constant="16" id="3CJ-Bp-4bE"/>
                             <constraint firstItem="vp5-lF-iif" firstAttribute="centerX" secondItem="JZ9-pl-9LZ" secondAttribute="centerX" id="6Hi-Nn-8OP"/>
