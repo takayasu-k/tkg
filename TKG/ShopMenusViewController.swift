@@ -36,8 +36,6 @@ class ShopMenusViewController: UIViewController, UITableViewDelegate, UITableVie
         shopMenusCollectionView.delegate = self
         shopMenusCollectionView.dataSource = self
       
-      
-      
       guard let shopData = shopData else {
         return
       }
@@ -201,14 +199,11 @@ class ShopMenusViewController: UIViewController, UITableViewDelegate, UITableVie
   
   // リクエストを行ってメニューのJSONデータを構造体として受け取り画面に表示するメソッド
   func request(requestUrl: String) {
-
-    
     // URL生成
     guard let url = URL(string: requestUrl) else {
       // URL生成失敗
       return
     }
-    
     
     // リクエスト生成
     let request = URLRequest(url: url)
