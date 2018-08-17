@@ -10,7 +10,6 @@ import UIKit
 
 class MenuDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
-//  var reviewsDataArray = [["userName":"ユーザー①","content":"おいしい。この店に来たら是非食べてほしいです！！(^o^)","updatedAt":"2018年7月27日"],["userName":"ユーザー②","content":"うんめぇーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー！！！！！","updatedAt":"2018年7月27日"],["userName":"ユーザー③","content":"最高です！","updatedAt":"2018年7月27日"],["userName":"ユーザー④","content":"とにかくうまい。最高にうまい。いけいけ。最高。いけてる。まじうま。激ウマ。とにかくうまい。最高にうまい。いけいけ。最高。いけてる。まじうま。激ウマ。とにかくうまい。最高にうまい。いけいけ。最高。いけてる。まじうま。激ウマ。とにかくうまい。最高にうまい。いけいけ。最高。いけてる。まじうま。激ウマ。とにかくうまい。最高にうまい。いけいけ。最高。いけてる。まじうま。激ウマ。とにかくうまい。最高にうまい。いけいけ。最高。いけてる。まじうま。激ウマ。とにかくうまい。最高にうまい。いけいけ。最高。いけてる。まじうま。激ウマ。とにかくうまい。最高にうまい。いけいけ。最高。いけてる。まじうま。激ウマ。とにかくうまい。最高にうまい。いけいけ。最高。いけてる。まじうま。激ウマ。","updatedAt":"2018年7月27日"],["userName":"ユーザー⑤","content":"おいしいですね。","updatedAt":"2018年7月27日"]]
   
   var reviewsDataArray = [ReviewData]()
   
@@ -19,6 +18,11 @@ class MenuDetailViewController: UIViewController, UITableViewDelegate, UITableVi
   @IBOutlet weak var menuPriceLabel: UILabel!
   
   @IBOutlet weak var reviewsTableView: UITableView!
+  
+  var token: String = ""
+  var client: String = ""
+  var uid: String = ""
+  var statusCode: Int = 0
   
   var imageCache = NSCache<AnyObject, UIImage>()
   var reviewsURL: String = "http://menumeal.jp/menus/1/reviews"
@@ -29,6 +33,32 @@ class MenuDetailViewController: UIViewController, UITableViewDelegate, UITableVi
       
       self.reviewsURL = "http://menumeal.jp/menus/\(String(menuData.menuID))/reviews"
       print(reviewsURL)
+      
+      
+      let userDefaults = UserDefaults.standard
+      if userDefaults.string(forKey: "access-token") == nil {
+        self.token = ""
+      } else {
+        self.token = userDefaults.string(forKey: "access-token")!
+      }
+      if userDefaults.string(forKey: "client") == nil {
+        self.client = ""
+      } else {
+        self.client = userDefaults.string(forKey: "client")!
+      }
+      if userDefaults.string(forKey: "uid") == nil {
+        self.uid = ""
+      } else {
+        self.uid = userDefaults.string(forKey: "uid")!
+      }
+//      self.token = userDefaults.string(forKey: "access-token")!
+//      self.client = userDefaults.string(forKey: "client")!
+//      self.uid = userDefaults.string(forKey: "uid")!
+      print("viewDidLoad時点でのトークンは\(self.token)")
+      print("viewDidLoad時点でのクライアントは\(self.client)")
+      print("viewDidLoad時点でのユーアイデーは\(self.uid)")
+
+      isLogedIn(token: self.token, client: self.client, uid: self.uid)
       
       reviewsTableView.delegate = self
       reviewsTableView.dataSource = self
@@ -183,7 +213,73 @@ class MenuDetailViewController: UIViewController, UITableViewDelegate, UITableVi
   }
 
   @IBAction func showReviewFormButtonTapped(_ sender: Any) {
-    performSegue(withIdentifier: "showReviewForm", sender: nil)
+    
+    if checkStatusCode() == true {
+      performSegue(withIdentifier: "showReviewForm", sender: nil)
+    } else {
+      performSegue(withIdentifier: "showSignup", sender: nil)
+    }
+    
+  }
+  
+  // ユーザーのログインをチェックしてステータスコードを取得するメソッド
+  func isLogedIn(token: String, client: String, uid: String) {
+    // ログインしているかをチェックして真偽値を返す
+    let urlString = "http://menumeal.jp/auth/validate_token"
+    var request = URLRequest(url: URL(string: urlString)!)
+    
+    request.httpMethod = "GET"
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.addValue(self.token, forHTTPHeaderField: "access-token")
+    request.addValue(self.client, forHTTPHeaderField: "client")
+    request.addValue(self.uid, forHTTPHeaderField: "uid")
+    
+    // use NSURLSessionDataTask
+    let task = URLSession.shared.dataTask(with: request, completionHandler: {data, response, error in
+      if (error == nil) {
+        let result = String(data: data!, encoding: .utf8)!
+        print(result)
+        
+        guard let response = response as? HTTPURLResponse else {
+          return
+        }
+        
+        if response.statusCode == 200 {
+          self.token = response.allHeaderFields["access-token"] as! String
+          self.client = response.allHeaderFields["client"] as! String
+          self.uid = response.allHeaderFields["uid"] as! String
+          print("アクセストークンは：\(self.token)")
+          print("クライアントは：\(self.client)")
+          print("UIDは：\(self.uid)")
+          self.statusCode = response.statusCode as Int
+        } else {
+          self.statusCode = response.statusCode as Int
+        }
+        
+        
+        
+//        self.statusCode = response.statusCode as Int
+        print("ステータスコードは\(String(self.statusCode))でっせーーーーーーー")
+        // ここで返却結果から必要な情報をとりだす？
+        if self.statusCode == 200 {
+          print("ログインできてる！！！！")
+        }
+      } else {
+        print("error")
+      }
+    })
+    task.resume()
+    
+  }
+  
+  func checkStatusCode() -> Bool {
+    if self.statusCode == 200 {
+      print("チェック結果は\(self.statusCode)ですねん")
+      return true
+    } else {
+      print("チェック結果は\(self.statusCode)ですねん")
+      return false
+    }
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
